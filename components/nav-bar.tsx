@@ -3,19 +3,13 @@
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
-import { Sun,Moon ,Home, Paperclip,User,SquareTerminal,FolderKanban} from 'lucide-react';
+import { Sun,Moon} from 'lucide-react';
+import { NavigationBarItem } from "@/lib/utils";
 
 interface NavbarProps{
     path:string
 }
 
-const NavigationBarItem=[
-    {name:'Home',slug:'/',icon:Home},
-    {name:'About',slug:'/about',icon:User},
-    {name:'Links',slug:'/links',icon:Paperclip},
-    {name:'Project',slug:'/project',icon:FolderKanban},
-    {name:'Terminal',slug:'/terminal',icon: SquareTerminal }
-]
 
 const NavBar=({path}:NavbarProps)=>{
 
@@ -31,7 +25,7 @@ const NavBar=({path}:NavbarProps)=>{
     return(
         <div className='w-full min-h-full h-full flex flex-col justify-start items-center pt-6'>
             <div className='flex flex-col gap-4'>
-            {NavigationBarItem.map((item, index) => {
+            {NavigationBarItem?.map((item, index) => {
                 return (
                 <div key={item.slug}>
                     {path === item.slug ? (

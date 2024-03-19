@@ -3,16 +3,9 @@
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
-import { Sun,Moon ,Home, Paperclip,User,SquareTerminal,FolderKanban} from 'lucide-react';
+import { Sun,Moon } from 'lucide-react';
+import { NavigationBarItem } from "@/lib/utils";
 
-
-const NavigationBarItem=[
-    {name:'Home',slug:'/',icon:Home},
-    {name:'About',slug:'/about',icon:User},
-    {name:'Links',slug:'/links',icon:Paperclip},
-    {name:'Project',slug:'/project',icon:FolderKanban},
-    {name:'Terminal',slug:'/terminal',icon: SquareTerminal }
-]
 
 interface MobileProps{
     path:string
@@ -27,7 +20,7 @@ const MobileNav=({path}:MobileProps)=>{
     return(
         <div className="min-w-full min-h-full h-full flex overflow-x-scroll dark:bg-zinc-800 bg-zinc-500 justify-center items-center py-1 shadow-xl gap-4">
             <div className="flex justify-evenly gap-[14px] pl-4">
-                {NavigationBarItem.map((item, index) => {
+                {NavigationBarItem?.map((item, index) => {
                 return (
                     <button
                     key={index}
