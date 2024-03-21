@@ -54,8 +54,6 @@ export async function generateMetadata({ params, searchParams }: Props,parent: R
       locale: 'en_IN',
       type: 'website',
     },
-  
-
   }
 }
 
@@ -70,14 +68,14 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           enableSystem
           disableTransitionOnChange> 
           <main className="flex selection:bg-zinc-200/30 flex-col overflow-x-hidden min-h-screen items-center bg-zinc-100 dark:bg-zinc-900 font-serif max-h-auto relative">
-            <div className="flex w-full h-full lg:w-[89%] md:w-2/3">
+            <div className="flex w-full h-full lg:w-[85%] md:w-2/3">
               <div className="w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block">
                 <NavBar path={pathname} />
               </div>
               <div className="fixed top-0 w-full mb-16 z-50 block lg:hidden md:hidden">
                 <MobileNav path={pathname} />
               </div>
-              <div className="mt-16">
+              <div className="mt-16 text-center w-full">
                 {children}
               </div>
             </div>

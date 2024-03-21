@@ -73,7 +73,7 @@ const NavBar=({path}:NavbarProps)=>{
                         <item.icon className="text-zinc-100 w-3 h-3" />
                         </div>
                         {tooltipVisibility[index] && (
-                        <span className="absolute text-[0.75rem] leading-none left-10 p-[0.62rem] rounded shadow-xl text-zinc-200 dark:bg-zinc-700 bg-zinc-800">
+                        <span className="absolute text-[0.75rem] leading-none left-10 p-[0.62rem] rounded shadow-xl text-zinc-200 dark:bg-zinc-700 bg-zinc-800 z-50 opacity-100">
                             {item.name}
                         </span>
                         )}
