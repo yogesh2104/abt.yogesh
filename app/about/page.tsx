@@ -1,5 +1,6 @@
 "use client"
 import WritingEffect from "@/components/WritingEffect";
+import Link from "next/link";
 
 
 const AboutPage=()=>{
@@ -21,7 +22,7 @@ const AboutPage=()=>{
     
     though I'm somewhat introverted!). So, in case you want to talk about anything leave messages I'll get back to you once I'm active. All my 
     
-    social links are listed [here](/links). That's pretty much everything about me.`
+    social links are listed <a href="/links" class="text-red-600">[here]</a>. That's pretty much everything about me.`
   
     // const convertMarkDown=new showdown.Converter({metadata:true})
     // const htmlText=convertMarkDown.makeHtml(aboutMe)
@@ -35,13 +36,13 @@ const AboutPage=()=>{
                         <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
                         <span className="bg-[#1a1443] text-white p-2 px-5 text-xl rounded-md">
-                            Skills
+                            WHO I AM?
                         </span>
                         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
                         </div>
                     </div>
                     <div className="container break-normal mb-5">
-                        {/* <WritingEffect text={htmlText}/> */}
+                        <WritingEffect text={aboutMe}/>
                     </div>
 
                     <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>

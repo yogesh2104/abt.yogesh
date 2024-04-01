@@ -9,7 +9,7 @@ export default function Home() {
     <section className="relative flex flex-col items-center justify-between">
       <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-          <h1 className="text-3xl font-bold leading-10 text-black dark:text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+          <h1 className="text-3xl font-bold leading-10 text-black dark:text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem] text-left">
             Hello, <br />
             This is {' '}
             <span className=" text-pink-500">{PersonalData.name}</span>
@@ -52,7 +52,7 @@ export default function Home() {
 
         </div>
         
-        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] mt-10">
           <div className="flex flex-row animate-pulse">
             <div className=" h-[2px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
             <div className=" h-[2px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
@@ -64,7 +64,8 @@ export default function Home() {
               <div className="h-3 w-3 rounded-full bg-green-200"></div>
             </div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+
+          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8 text-left">
             <code className="font-mono text-xs md:text-sm lg:text-base">
               <div className="blink">
                 <span className="mr-2 text-pink-500">const</span>
