@@ -1,7 +1,4 @@
-"use client"
 import WritingEffect from "@/components/WritingEffect";
-import Link from "next/link";
-
 
 const AboutPage=()=>{
 
@@ -24,10 +21,6 @@ const AboutPage=()=>{
     
     social links are listed <a href="/links" class="text-red-600">[here]</a>. That's pretty much everything about me.`
   
-    // const convertMarkDown=new showdown.Converter({metadata:true})
-    // const htmlText=convertMarkDown.makeHtml(aboutMe)
-
-
     return(
         <>
             <div className="w-full">
@@ -49,8 +42,7 @@ const AboutPage=()=>{
                     <div className="flex justify-center -translate-y-[1px]">
                         <div className="w-3/4"><div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" /></div>
                     </div>
-
-                    
+    
                 </div>
             </div>
         </>

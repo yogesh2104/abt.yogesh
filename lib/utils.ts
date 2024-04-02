@@ -9,9 +9,9 @@ export function cn(...inputs: ClassValue[]) {
 export const NavigationBarItem=[
   {name:'Home',slug:'/',icon:Home},
   {name:'Skill',slug:'/skill',icon:SquareLibrary},
-  {name:'About',slug:'/about',icon:User},
-  {name:'Links',slug:'/links',icon:Paperclip},
-  {name:'Project',slug:'/project',icon:FolderKanban},
   {name:"Education",slug:"/education",icon:GraduationCap},
+  {name:'Project',slug:'/project',icon:FolderKanban},
+  {name:'Links',slug:'/links',icon:Paperclip},
+  {name:'About',slug:'/about',icon:User},
   {name:'Terminal',slug:'/terminal',icon: SquareTerminal }
 ]
