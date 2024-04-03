@@ -12,50 +12,50 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata({ params, searchParams }: Props,parent: ResolvingMetadata): Promise<Metadata> {
+// export async function Metadata({ params, searchParams }: Props,parent: ResolvingMetadata): Promise<Metadata> {
 
-  return {
-    title: {
-      template: '%s | Yogesh Singh',
-      default: 'Yogesh Singh',
-    },
-    description: "yogesh//singh, student and web developer from India",
-    metadataBase: new URL('http://localhost:3000/'),
-    generator: 'Next.js',
-    applicationName: 'Next.js',
-    referrer: 'origin-when-cross-origin',
-    keywords: ['web dev', 'React', 'JavaScript','nextjs','web developer','india','indian developer'],
-    authors: [{ name: 'Yogesh' }, { name: 'Yogesh', url: 'http://localhost:3000/' }],
-    alternates: {
-      canonical: '/',
-      languages: {
-        'en-IN': '/en-IN',
-        'en-US': '/en-US',
-      },
-    },
-    openGraph: {
-      title: 'Yogesh Singh',
-      description: 'The React Framework for the Web',
-      url: 'http://localhost:3000/',
-      siteName: 'abt.yogesh.me',
-      // images: [
-      //   {
-      //     url: 'http://localhost:3000/og.png', // Must be an absolute URL
-      //     width: 800,
-      //     height: 600,
-      //   },
-      //   {
-      //     url: 'http://localhost:3000/og.png', // Must be an absolute URL
-      //     width: 1800,
-      //     height: 1600,
-      //     alt: 'My custom alt',
-      //   },
-      // ],
-      locale: 'en_IN',
-      type: 'website',
-    },
-  }
-}
+//   return {
+//     title: {
+//       template: '%s | Yogesh Singh',
+//       default: 'Yogesh Singh',
+//     },
+//     description: "yogesh//singh, student and web developer from India",
+//     metadataBase: new URL('http://localhost:3000/'),
+//     generator: 'Next.js',
+//     applicationName: 'Next.js',
+//     referrer: 'origin-when-cross-origin',
+//     keywords: ['web dev', 'React', 'JavaScript','nextjs','web developer','india','indian developer'],
+//     authors: [{ name: 'Yogesh' }, { name: 'Yogesh', url: 'http://localhost:3000/' }],
+//     alternates: {
+//       canonical: '/',
+//       languages: {
+//         'en-IN': '/en-IN',
+//         'en-US': '/en-US',
+//       },
+//     },
+//     openGraph: {
+//       title: 'Yogesh Singh',
+//       description: 'The React Framework for the Web',
+//       url: 'http://localhost:3000/',
+//       siteName: 'abt.yogesh.me',
+//       // images: [
+//       //   {
+//       //     url: 'http://localhost:3000/og.png', // Must be an absolute URL
+//       //     width: 800,
+//       //     height: 600,
+//       //   },
+//       //   {
+//       //     url: 'http://localhost:3000/og.png', // Must be an absolute URL
+//       //     width: 1800,
+//       //     height: 1600,
+//       //     alt: 'My custom alt',
+//       //   },
+//       // ],
+//       locale: 'en_IN',
+//       type: 'website',
+//     },
+//   }
+// }
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   const pathname = headers().get('x-next-pathname') as string;
