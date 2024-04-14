@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/data/personalData.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/data/personalData.js","lib/data/projectData.js","lib/data/educationData.js","lib/data/experienceData.js"],
   "exclude": ["node_modules"]
 }

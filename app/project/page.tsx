@@ -22,7 +22,7 @@ const ProjectPage=()=>{
                     <div className="w-3/4"><div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" /></div>
                 </div>
 
-                <div className="pt-24">
+                <div className="">
                     <div className="flex flex-col gap-6">
                     {ProjectData.slice(0, 4).map((project, index) => (
                         <div

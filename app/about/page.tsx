@@ -5,19 +5,19 @@ const AboutPage=()=>{
     const aboutMe=`
     I'm Yogesh Singh on the web. I'am a 23 y/o belonging to the Homo sapiens 🤣, a brother, a son, a friend, a self taugh web developer 
     
-    and programmer.I have completed MCA(Master of Computer Application) I had already started programming back when I was in Second year 
+    and programmer.I have completed MCA(Master of Computer Application). I had already started programming back when I was in Second year 
    
     of BSc because first year pass in sports😁. I started web development mostly in frontend development at that time, I used only HTML 
     
-    and CSS and simple javascript. If you want to know more about which programming I know they are - Python(❤), Javascript and framework 
+    and CSS and simple javascript. If you want to know more about which programming I know they are - Python(<span class="text-red-600">❤</span>), Javascript and framework 
     
-    - ReactJs,NextJs,Tailwind CSS, "MERN Stack(Learning)".Things I do other than dev and programming. Apart from that, I enjoy playing cricket (🏏). 
+    - ReactJs,NextJs,Tailwind CSS, "MERN Stack(Learning)". Things I do other than dev and programming. Apart from that, I enjoy playing cricket (🏏). 
     
-    Touching grass is important. Sometimes listening soft music and seeing clouds passing 😳. I also play mobile games and like BattleRoyal game.
+    Touching grass is important. Sometimes listening soft music and seeing clouds passing 😳. I also play mobile games like BattleRoyal game.
     
     Apart from this, I don't have much to do other than overthinking and staring at my phone screen.I like making friends (be it online or irl 
     
-    though I'm somewhat introverted!). So, in case you want to talk about anything leave messages I'll get back to you once I'm active. All my 
+    though I'm somewhat introverted!). So, in case you want to talk about anything leave messages<a href="/contact-us" class="text-red-600">[here]</a>. I'll get back to you once I'm active. All my 
     
     social links are listed <a href="/links" class="text-red-600">[here]</a>. That's pretty much everything about me.`
   

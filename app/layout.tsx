@@ -6,6 +6,7 @@ import { headers } from 'next/headers'
 import { ThemeProvider } from "@/components/theme-provider";
 import MobileNav from "@/components/mobile-nav";
 import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer";
 
 type Props = {
   params: { id: string }
@@ -67,12 +68,12 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange> 
-          <main className="flex selection:bg-zinc-200/30 flex-col overflow-x-hidden min-h-screen items-center bg-zinc-100 dark:bg-zinc-900 font-serif max-h-auto relative">
+          <main className="flex selection:bg-zinc-200/30 flex-col overflow-x-hidden min-h-[86.4vh] items-center bg-zinc-100 dark:bg-zinc-900 font-serif max-h-auto relative">
             <div className="flex w-full h-full lg:w-[85%] md:w-2/3">
               <div className="w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block">
                 <NavBar path={pathname} />
               </div>
-              <div className="fixed top-0 w-full mb-16 z-50 block lg:hidden md:hidden">
+              <div className="fixed top-0 w-full mb-16 z-[999999] block lg:hidden md:hidden">
                 <MobileNav path={pathname} />
               </div>
               <div className="mt-16 text-center w-full">
@@ -80,6 +81,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
               </div>
             </div>
           </main>
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>
