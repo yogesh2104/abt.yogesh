@@ -11,7 +11,7 @@ export const NavigationBarItem=[
   {name:"Education",slug:"/education",icon:GraduationCap},
   {name:'Project',slug:'/project',icon:FolderKanban},
   {name:'Skill',slug:'/skill',icon:SquareLibrary},
-  {name:'Guest Book',slug:'/guest-book',icon:FileQuestion},
+  {name:'Guest Book',slug:'/guestbook',icon:FileQuestion},
   {name:'About',slug:'/about',icon:User},
   {name:'Contact',slug:'/contact-us',icon:PhoneCall},
 //  {name:'Terminal',slug:'/terminal',icon: SquareTerminal }
