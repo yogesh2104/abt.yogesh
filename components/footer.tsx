@@ -10,23 +10,23 @@ const Footer=()=>{
                 <div className="absolute top-0 h-[1px] w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-between">
-                <p className="text-sm">© Developer Portfolio by <Link target="_blank" href={PersonalData.linkedIn} className="text-[#16f2b3]">{PersonalData?.name}</Link></p>
+                <p className="text-sm text-black dark:text-white">© Developer Portfolio by <Link target="_blank" href={PersonalData.linkedIn} className="text-[#16f2b3]">{PersonalData?.name}</Link></p>
                 <div className="flex items-center gap-5">
                     <Link
                         target="_blank"
                         href={PersonalData.github}
                         className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
                     >
-                        <Star className="h-4 w-4" />
-                        <span>Star</span>
+                        <Star className="h-4 w-4 text-black dark:text-white" />
+                        <span className="text-black dark:text-white">Star</span>
                     </Link>
                     <Link
                         target="_blank"
                         href={PersonalData.github}
                         className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
                     >
-                        <GitFork className="h-4 w-4" />
-                        <span>Fork</span>
+                        <GitFork className="h-4 w-4 text-black dark:text-white" />
+                        <span className="text-black dark:text-white">Fork</span>
                     </Link>
                 </div>
                 </div>
