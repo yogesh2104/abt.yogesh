@@ -118,8 +118,8 @@ const SkillPage=()=>{
                                             </div>
 
                                             <div>
-                                                <p className="text-base sm:text-xl mb-2 font-medium uppercase text-start text-white dark:text-black"> {exp?.title}</p>
-                                                <p className="text-sm sm:text-base text-start text-white dark:text-black"> {exp?.company}</p>
+                                                <p className="text-base sm:text-xl mb-2 font-medium uppercase text-start text-white "> {exp?.title}</p>
+                                                <p className="text-sm sm:text-base text-start text-white"> {exp?.company}</p>
                                             </div>
                                         </div>
                                     </div>

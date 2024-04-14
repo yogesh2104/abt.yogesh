@@ -53,8 +53,8 @@ const EduPage=()=>{
                                             </div>
 
                                             <div>
-                                                <p className="text-sm sm:text-lg mb-2 font-medium uppercase text-start text-white dark:text-black"> {exp?.title}</p>
-                                                <p className="text-xs text-start text-white dark:text-black"> {exp?.institution}</p>
+                                                <p className="text-sm sm:text-lg mb-2 font-medium uppercase text-start text-white"> {exp?.title}</p>
+                                                <p className="text-xs text-start text-white "> {exp?.institution}</p>
                                             </div>
                                         </div>
                                     </div>
