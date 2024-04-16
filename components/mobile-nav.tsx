@@ -49,8 +49,8 @@ const MobileNav=({path}:MobileProps)=>{
                     className="w-full flex justify-center items-center dark:bg-zinc-800 bg-zinc-700 dark:hover:bg-zinc-700 hover:bg-zinc-800 shadow hover:shadow-xl rounded hover:scale-110 duration-300 ease-in-out"
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                     >
-                    <div className="p-2text-zinc-100">
-                        {theme === "dark" ? <Sun /> : <Moon />}
+                    <div className="p-2 text-zinc-100">
+                        {theme === "dark" ? <Sun className="text-zinc-100 h-4 w-4"/> : <Moon className="text-zinc-100 h-4 w-4" />}
                     </div>
                     </button>
                 )}

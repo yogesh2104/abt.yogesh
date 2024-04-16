@@ -85,11 +85,11 @@ const NavBar=({path}:NavbarProps)=>{
             <div className="flex flex-col gap-4">
                 {mounted === true && (
                 <button
-                    className="w-full flex justify-center items-center   shadow hover:shadow-xl rounded hover:scale-110 duration-300 ease-in-out"
+                    className="w-full flex justify-center items-center dark:bg-zinc-800 dark:hover:bg-zinc-700 shadow hover:shadow-xl rounded hover:scale-110 duration-300 ease-in-out dark:focus:bg-zinc-700 bg-zinc-700 hover:bg-zinc-800 focus:bg-zinc-800 relative"
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 >
                     <div className="p-2 text-zinc-100">
-                    {theme === "dark" ? <Sun className="w-4 h-4 text-white" color="red"/> : <Moon className="text-white w-4 h-4" color="blue"/>}
+                    {theme === "dark" ? <Sun className="w-3 h-3 text-white"/> : <Moon className="text-white w-3 h-3"/>}
                     </div>
                 </button>
                 )}
