@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import MobileNav from "@/components/mobile-nav";
 import NavBar from "@/components/nav-bar";
 import Footer from "@/components/footer";
-
+import { Toaster } from "@/components/ui/sonner"
 type Props = {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -79,6 +79,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
               <div className="mt-16 text-center w-full">
                 {children}
               </div>
+              <Toaster />
             </div>
           </main>
           <Footer/>
