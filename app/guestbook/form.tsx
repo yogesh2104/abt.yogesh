@@ -1,39 +1,55 @@
-"use client"
+'use client';
 
 import { useRef } from 'react';
-// import { saveGuestbookEntry } from '../db/actions';
+import { saveGuestbookEntry } from '../db/actions';
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { Button } from "@/components/ui/button"
+import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import { useFormStatus } from 'react-dom';
 
-export default function Form() {
-    const formRef = useRef<HTMLFormElement>(null);
-  
-    return (
-      <form
-        className="relative max-w-[500px]"
-        ref={formRef}>
-        <input
-          aria-label="Your message"
-          placeholder="Your message..."
-          name="entry"
-          type="text"
-          required
-          className="pl-4 pr-32 py-2 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full border-neutral-300 rounded-md bg-gray-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"
-        />
-        <SubmitButton />
+const FormSchema = z.object({
+  userEntry: z.string().min(2, {
+    message: "Message must be at least 2 characters.",
+  }).max(500, {message: "Message must be less than 500 characters"}),
+})
+
+export function InputForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      userEntry: "",
+    },
+  })
+ 
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    await saveGuestbookEntry(data.userEntry);
+    form.reset();
+  }
+
+  const { pending } = useFormStatus();
+ 
+  return (
+    <Form {...form}>
+      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="flex max-w-[500px] align-center gap-5">
+      <FormField
+        control={form.control}
+        name="userEntry"
+        render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <Input placeholder="Write Here..." {...field} />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <Button type="submit" disabled={pending}>Submit</Button>
       </form>
-    );
+    </Form>
+  )
 }
 
-function SubmitButton() {
-// const { pending } = useFormStatus();
-
-return (
-    <button
-        className="flex items-center justify-center absolute right-1 top-1 px-2 py-1 font-medium h-8 bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 rounded w-16"
-        // disabled={pending}
-        type="submit"
-    >
-    Sign
-    </button>
-);
-}

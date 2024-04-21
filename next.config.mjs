@@ -1,8 +1,10 @@
-// const withMDX = require('@next/mdx')()
-import withMDX from '@next/mdx'
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+    logging: {
+      fetches: {
+        fullUrl: true,
+      },
+    },
+    transpilePackages: ['next-mdx-remote'],   
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;

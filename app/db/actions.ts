@@ -1,6 +1,7 @@
+"use server"
 import { auth } from 'app/auth';
 import { type Session } from 'next-auth';
-import { sql } from './postgres';
+import { sql } from "@vercel/postgres";
 import { revalidatePath, unstable_noStore as noStore } from 'next/cache';
 
 async function getSession(): Promise<Session> {
@@ -11,7 +12,7 @@ async function getSession(): Promise<Session> {
     return session;
 }
 
-export async function saveGuestbookEntry(formData: FormData) {
+export async function saveGuestbookEntry(text:string) {
     let session = await getSession();
     let email = session.user?.email as string;
     let created_by = session.user?.name as string;
@@ -20,7 +21,7 @@ export async function saveGuestbookEntry(formData: FormData) {
       throw new Error('Unauthorized');
     }
   
-    let entry = formData.get('entry')?.toString() || '';
+    let entry = text;
     let body = entry.slice(0, 500);
   
     await sql`
@@ -29,22 +30,6 @@ export async function saveGuestbookEntry(formData: FormData) {
     `;
   
     revalidatePath('/guestbook');
-  
-    let data = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_SECRET}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'ys32809@gmail.com',
-        to: 'singhyogesh2104@gmail.com',
-        subject: 'Someone has created guestbook message',
-        html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
-      }),
-    });
-  
-    let response = await data.json();
-    console.log('Email sent', response);
+
   }
 

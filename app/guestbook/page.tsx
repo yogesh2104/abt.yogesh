@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { SignIn, SignOut } from "./button";
-import Form from "./form";
+import { SignInWithGit, SignInWithGoogle, SignOut } from "./button";
+import {InputForm} from "./form";
 import { auth } from 'app/auth';
 import { getGuestbookEntries } from "../db/queries";
 
@@ -21,7 +21,7 @@ export default function GuestbookPage() {
         </div>
 
         <Suspense>
-          {/* <GuestbookForm /> */}
+          <GuestbookForm />
           <div className="border text-start">
             <GuestbookEntries />
           </div>
@@ -36,12 +36,15 @@ async function GuestbookForm() {
     let session = await auth();
   
     return session?.user ? (
-      <>
-        <Form />
+      <div className='flex justify-start gap-5 align-center mb-6'>
+        <InputForm />
         <SignOut />
-      </>
+      </div>
     ) : (
-      <SignIn />
+      <div className="flex gap-2 w-full justify-center">
+        <SignInWithGoogle/>
+        <SignInWithGit />
+      </div>
     );
 }
 
