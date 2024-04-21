@@ -12,7 +12,7 @@ export const metadata = {
 export default function GuestbookPage() {
     return (
       <section>
-        <div className="flex justify-center -mt-7 mb-5">
+        <div className="flex justify-center mb-5">
             <div className="flex  items-center">
             <span className="w-24 h-[2px] bg-[#1a1443]"></span>
             <span className="bg-[#1a1443] text-white p-2 px-5 text-xl rounded-md">Sign in To Write Message</span>
@@ -22,7 +22,7 @@ export default function GuestbookPage() {
 
         <Suspense>
           <GuestbookForm />
-          <div className="border text-start">
+          <div className="border text-start m-2 rounded-md p-2">
             <GuestbookEntries />
           </div>
         </Suspense>

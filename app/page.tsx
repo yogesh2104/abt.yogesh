@@ -1,3 +1,4 @@
+import CardHeader from "@/components/card-header";
 import { PersonalData } from "@/lib/data/personalData";
 import { ArrowDownToLine, Contact, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
@@ -54,18 +55,7 @@ export default function Home() {
         
         <div className="order-1 lg:order-2  p-2">
           <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] mt-10">
-            <div className="flex flex-row animate-pulse">
-              <div className=" h-[2px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-              <div className=" h-[2px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-            </div>
-            <div className="px-4 lg:px-8 py-5">
-              <div className="flex flex-row space-x-2">
-                <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-                <div className="h-3 w-3 rounded-full bg-green-200"></div>
-              </div>
-            </div>
-
+            <CardHeader/>
             <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8 text-left">
               <code className="font-mono text-xs md:text-sm lg:text-base">
                 <div className="blink">

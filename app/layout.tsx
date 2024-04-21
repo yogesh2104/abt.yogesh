@@ -8,6 +8,8 @@ import MobileNav from "@/components/mobile-nav";
 import NavBar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner"
+import { Analytics } from '@vercel/analytics/react';
+
 type Props = {
   params: { id: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -78,6 +80,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
               </div>
               <div className="mt-16 text-center w-full">
                 {children}
+                <Analytics />
               </div>
               <Toaster />
             </div>
