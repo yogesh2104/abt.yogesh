@@ -8,11 +8,11 @@ const ProjectPage=()=>{
             <div className="relative z-50 lg:mt-[-70px]">
                 <div className="flex justify-center my-5 lg:py-8">
                     <div className="flex  items-center">
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-                    <span className="bg-[#1a1443] text-white p-2 px-5 text-xl rounded-md">
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+                    <span className="bg-[#2c73e4] text-white p-2 px-5 text-xl rounded-md">
                         Project
                     </span>
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
                     </div>
                 </div>
                 
@@ -30,7 +30,7 @@ const ProjectPage=()=>{
                             key={index}
                             className="sticky-card w-full mx-auto max-w-2xl sticky"
                         >
-                        <div className="box-border flex items-center justify-center rounded shadow-[0_0_30px_0_rgba(0,0,0,0.3)] transition-all duration-[0.5s]">
+                        <div className="box-border flex items-center justify-center rounded">
                             <ProjectCard project={project} />
                         </div>
                         </div>

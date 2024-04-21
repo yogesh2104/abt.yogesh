@@ -8,6 +8,7 @@ import { PersonalData } from "@/lib/data/personalData";
 import { experiences } from '@/lib/data/experienceData';
 import experience from "./2.json"
 import { BriefcaseBusiness } from "lucide-react";
+import CardHeader from "@/components/card-header";
 
 const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django","Docker","Git","HTML","JavaScript","MongoDB","NextJs","Python","React","Strapi","Tailwind","Typescript"]
 
@@ -19,16 +20,16 @@ const SkillPage=()=>{
             <div className="relative z-50 lg:mt-[-70px]">
                 <div className="flex justify-center my-5 lg:py-2">
                     <div className="flex  items-center">
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-                    <span className="bg-[#1a1443] text-white p-2 px-5 text-xl rounded-md">Skills</span>
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+                    <span className="bg-[#2c73e4] text-white p-2 px-5 text-xl rounded-md">Skills</span>
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
                     </div>
                 </div>
                 <div className="container break-normal mb-5 text-justify">{PersonalData?.skillDes}</div>
 
                 <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
                 <div className="flex justify-center -translate-y-[1px]">
-                    <div className="w-3/4"><div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" /></div>
+                    <div className="w-3/4"><div className="h-[1px] bg-gradient-to-r from-transparent via-[#2c73e4] to-transparent  w-full" /></div>
                 </div>
 
                 <div className=" container">
@@ -47,7 +48,7 @@ const SkillPage=()=>{
                             <div className="h-full w-full rounded-lg border border-[#1f223c] dark:bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
                                 <div className="flex -translate-y-[1px] justify-center">
                                 <div className="w-3/4">
-                                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+                                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#2c73e4] to-transparent" />
                                 </div>
                                 </div>
                                 <div className="flex flex-col items-center justify-center gap-3 p-6">
@@ -73,12 +74,12 @@ const SkillPage=()=>{
         </div> 
 
         <div className="container">
-            <div className="relative z-50 border-t border-[#25213b]">
+            <div className="relative z-50 border-t border-[#2c73e4]">
                 <div className="flex justify-center my-5 lg:py-8">
                     <div className="flex  items-center">
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-                    <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">Experiences</span>
-                    <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+                    <span className="bg-[#2c73e4] w-fit text-white p-2 px-5 text-xl rounded-md">Experiences</span>
+                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
                     </div>
                 </div>
 
@@ -93,33 +94,24 @@ const SkillPage=()=>{
                             {experiences.map((exp)=>{
                                return(
                                 <Fragment key={exp.id}>
-                                    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] mb-4">
-                                        <div className="flex flex-row animate-pulse">
-                                            <div className=" h-[2px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-                                            <div className=" h-[2px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-                                        </div>
-
-                                        <div className="px-4 lg:px-8 py-5">
-                                            <div className="flex flex-row space-x-2">
-                                            <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                                            <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-                                            <div className="h-3 w-3 rounded-full bg-green-200"></div>
-                                            </div>
-                                        </div>
+                                    <div className=" border-black dark:border-white relative rounded-lg border mb-4">
+                                       
+                                        <CardHeader/>
+                                        <div className='overflow-hidden border-t-[1px] border-black dark:border-white px-2 py-2 text-left'/>
 
                                         <div className="flex justify-center">
-                                            <p className="text-xs sm:text-sm text-[#16f2b3]">{exp?.duration}</p>
+                                            <p className="text-xs sm:text-sm text-[#2c73e4]">{exp?.duration}</p>
                                         </div>
 
                                         <div className="flex items-center gap-x-8 px-3 py-5">
 
-                                            <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                                            <div className="text-[#2c73e4]  transition-all duration-300 hover:scale-125">
                                                 <BriefcaseBusiness className="h-12 w-12" />
                                             </div>
 
                                             <div>
-                                                <p className="text-base sm:text-xl mb-2 font-medium uppercase text-start text-white "> {exp?.title}</p>
-                                                <p className="text-sm sm:text-base text-start text-white"> {exp?.company}</p>
+                                                <p className="text-base sm:text-xl mb-2 font-medium uppercase text-start dark:text-white text-black"> {exp?.title}</p>
+                                                <p className="text-sm sm:text-base text-start dark:text-white text-black"> {exp?.company}</p>
                                             </div>
                                         </div>
                                     </div>
