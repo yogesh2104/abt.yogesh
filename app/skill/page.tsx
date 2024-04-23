@@ -1,4 +1,8 @@
-"use client"
+
+export const metadata = {
+    title: 'abt-yogesh || skill',
+    description: 'This is the portfolio of Yogesh Sing. I am a full stack developer. I am a quick learner and I am always looking for new challenges.',
+}
 
 import {Fragment} from "react"
 import Image from "next/image";

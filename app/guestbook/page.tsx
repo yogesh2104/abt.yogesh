@@ -5,7 +5,7 @@ import { auth } from 'app/auth';
 import { getGuestbookEntries } from "../db/queries";
 
 export const metadata = {
-    title: 'Guest book',
+    title: 'abt.yogesh || Guest book',
     description: 'Sign my guestbook and leave your message.',
 };
 
