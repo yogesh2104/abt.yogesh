@@ -3,6 +3,7 @@ import { SignInWithGit, SignInWithGoogle, SignOut } from "./button";
 import {InputForm} from "./form";
 import { auth } from 'app/auth';
 import { getGuestbookEntries } from "../db/queries";
+import CardHeader from "@/components/card-header";
 
 export const metadata = {
     title: 'abt.yogesh || Guest book',
@@ -22,7 +23,7 @@ export default function GuestbookPage() {
 
         <Suspense>
           <GuestbookForm />
-          <div className="border text-start m-2 rounded-md p-2">
+          <div>
             <GuestbookEntries />
           </div>
         </Suspense>
@@ -55,14 +56,23 @@ async function GuestbookEntries() {
       return null;
     }
   
-    return entries.map((entry) => (
-      <div key={entry.id} className="flex flex-col space-y-1 mb-4 p-1">
-        <div className="w-full text-sm break-words">
-          <span className="text-neutral-600 dark:text-neutral-400 mr-1 font-semibold">
-            {entry.created_by}:
-          </span>
-          {entry.body}
+    return(
+      <div className="p-2">
+            <div className="border-black dark:border-white relative rounded-lg border mb-4">
+              <CardHeader/>
+              <div className=" h-[390px] overflow-y-auto border-t-[1px] border-black dark:border-white px-4 lg:px-8 py-4 lg:py-8 text-left">
+                {entries.map((entry) => (
+                  <div key={entry.id} className="flex flex-col mb-4 ">
+                    <div className="w-full text-sm break-words">
+                      <span className="text-neutral-600 dark:text-neutral-400 mr-1 font-semibold">
+                        {entry.created_by}:
+                      </span>
+                      {entry.body}
+                    </div>
+                  </div> 
+                ))}
+              </div>
+            </div>
         </div>
-      </div>
-    ));
+    ) 
 }
