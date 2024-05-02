@@ -12,12 +12,12 @@ export const metadata = {
 
 export default function GuestbookPage() {
     return (
-      <section>
+      <section className=" lg:-mt-[50px]">
         <div className="flex justify-center mb-5">
             <div className="flex  items-center">
-            <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
-            <span className="bg-[#2c73e4] text-white p-2 px-5 text-xl rounded-md">Sign in To Write Message</span>
-            <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+            <span className="w-24 h-[2px] bg-primary"></span>
+            <span className="bg-primary text-white dark:text-black p-2 px-5 text-sm rounded-md lg:text-xl">Sign in To Write Message</span>
+            <span className="w-24 h-[2px] bg-primary"></span>
             </div>
         </div>
 
@@ -37,7 +37,7 @@ async function GuestbookForm() {
     let session = await auth();
   
     return session?.user ? (
-      <div className='flex justify-start gap-5 align-center mb-6'>
+      <div className='flex justify-start gap-5 align-center mb-6 ml-3'>
         <InputForm />
         <SignOut />
       </div>
@@ -60,11 +60,11 @@ async function GuestbookEntries() {
       <div className="p-2">
             <div className="border-black dark:border-white relative rounded-lg border mb-4">
               <CardHeader/>
-              <div className=" h-[390px] overflow-y-auto border-t-[1px] border-black dark:border-white px-4 lg:px-8 py-4 lg:py-8 text-left">
+              <div className=" h-[400px] overflow-y-auto border-t-[1px] border-black dark:border-white px-2 lg:px-4 py-2 lg:py-4 text-left">
                 {entries.map((entry) => (
                   <div key={entry.id} className="flex flex-col mb-4 ">
                     <div className="w-full text-sm break-words">
-                      <span className="text-neutral-600 dark:text-neutral-400 mr-1 font-semibold">
+                      <span className="text-primary mr-1 font-semibold">
                         {entry.created_by}:
                       </span>
                       {entry.body}

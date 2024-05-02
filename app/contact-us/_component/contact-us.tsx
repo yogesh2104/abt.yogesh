@@ -48,11 +48,11 @@ const ContactUS=()=>{
 
     return(
         <>
-            <div className="flex justify-center -mt-5">
+            <div className="flex justify-center -mt-9">
                 <div className="flex  items-center">
-                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
-                    <span className="bg-[#2c73e4] text-white p-2 px-5 text-xl rounded-md">Contact with me</span>
-                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+                    <span className="w-24 h-[2px] bg-primary"></span>
+                    <span className="bg-primary text-white dark:text-black p-2 px-5 text-xl rounded-md">Contact with me</span>
+                    <span className="w-24 h-[2px] bg-primary"></span>
                 </div>
             </div>
 

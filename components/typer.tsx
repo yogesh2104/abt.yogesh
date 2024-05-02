@@ -8,7 +8,7 @@ interface TypeProps {
 
 const Type =({ data }:TypeProps) => {
   return (
-    <div className="text-[#16f2b3]">
+    <div className="text-primary">
       <Typewriter
         options={{
           strings: data,

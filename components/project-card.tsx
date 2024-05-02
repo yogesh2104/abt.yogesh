@@ -23,7 +23,7 @@ function ProjectCard({ project }:ProjectProps) {
           <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
           <div className="h-3 w-3 rounded-full bg-green-700"></div>
         </div>
-        <p className="text-center ml-3 text-[#2c73e4] text-base lg:text-xl">
+        <p className="text-center ml-3 text- text-base lg:text-xl">
           {project.name}
         </p>
       </div>
@@ -38,7 +38,7 @@ function ProjectCard({ project }:ProjectProps) {
           <div>
             <span className="ml-4 lg:ml-8 mr-2 dark:text-white text-black">name:</span>
             <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-600">{project.name}</span>
+            <span className="text-primary">{project.name}</span>
             <span className="text-gray-400">{`',`}</span>
           </div>
 
@@ -48,7 +48,7 @@ function ProjectCard({ project }:ProjectProps) {
             {
               project.tools.map((tag, i) => (
                 <Fragment key={i}>
-                  <span className="text-amber-600">{tag}</span>
+                  <span className="text-primary">{tag}</span>
                   {
                     project.tools.length - 1 !== i &&
                     <span className="text-gray-400">{`', '`}</span>
@@ -65,7 +65,7 @@ function ProjectCard({ project }:ProjectProps) {
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="dark:text-white text-black">Description:</span>
-            <span className="text-[#2c73e4]">{' ' + project.description}</span>
+            <span className="text-primary">{' ' + project.description}</span>
             <span className="text-gray-400"></span>
           </div>
           <div><span className="text-gray-400">{`};`}</span></div>

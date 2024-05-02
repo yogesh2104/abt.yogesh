@@ -13,12 +13,12 @@ export const metadata = {
 const EduPage=()=>{
     return(
         <div className="container lg:-mt-[50px]">
-            <div className="relative z-50 border-[#2c73e4]">
+            <div className="relative z-50">
                 <div className="flex justify-center ">
                     <div className="flex  items-center">
-                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
-                    <span className="bg-[#2c73e4] text-white p-2 px-5 text-xl rounded-md">Education</span>
-                    <span className="w-24 h-[2px] bg-[#2c73e4]"></span>
+                    <span className="w-24 h-[2px] bg-primary"></span>
+                    <span className="bg-primary text-white dark:text-black p-2 px-5 text-xl rounded-md">Education</span>
+                    <span className="w-24 h-[2px] bg-primary"></span>
                     </div>
                 </div>
 
@@ -39,18 +39,18 @@ const EduPage=()=>{
                                         <div className='overflow-hidden border-t-[1px] border-black dark:border-white px-2 py-2 text-left'/>
 
                                         <div className="flex justify-center">
-                                            <p className="text-xs sm:text-sm text-[#2c73e4]">{exp?.duration}</p>
+                                            <p className="text-xs sm:text-sm text-primary">{exp?.duration}</p>
                                         </div>
 
                                         <div className="flex items-center gap-x-6 px-3 py-4">
 
-                                            <div className="text-[#2c73e4] transition-all duration-300 hover:scale-125">
+                                            <div className="text-black dark:text-white transition-all duration-300 hover:scale-125">
                                                 <GraduationCap className="h-12 w-12" />
                                             </div>
 
                                             <div>
-                                                <p className="text-sm sm:text-lg mb-2 font-medium uppercase text-start dark:text-white text-black "> {exp?.title}</p>
-                                                <p className="text-xs text-start dark:text-white text-black"> {exp?.institution}</p>
+                                                <p className="text-sm sm:text-lg mb-2 font-medium uppercase text-start text-primary"> {exp?.title}</p>
+                                                <p className="text-xs text-start text-primary"> {exp?.institution}</p>
                                             </div>
                                         </div>
                                     </div>
