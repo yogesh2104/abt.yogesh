@@ -18,8 +18,8 @@ export function ThemeCustomizer() {
 
   return (
     <div className="flex items-center space-x-2">
-      <div className="hidden md:flex">
-        <div className="mr-2 hidden items-center space-x-0.5 lg:flex">
+      <div className="flex">
+        <div className="mr-2 items-center space-x-0.5 flex">
           {mounted && (
             <>
               {["zinc", "rose", "blue", "green", "orange"].map((color) => {
