@@ -10,18 +10,16 @@ export const metadata = {
 const AboutPage=()=>{
     return(
         <>
-            <div className="container lg:-mt-[50px]">
+            <div className="w-full lg:-mt-[50px]">
                 <div className="relative z-50">
-                    <div className="flex justify-center">
+                    <div className="flex justify-center mb-5">
                         <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-primary"></span>
-                        <span className="bg-primary text-white dark:text-black p-2 px-5 text-xl rounded-md">
-                            WHO I AM?
-                        </span>
+                        <span className="bg-primary text-white dark:text-black p-1 px-5 text-lg rounded-md lg:text-xl">About Us</span>
                         <span className="w-24 h-[2px] bg-primary"></span>
                         </div>
                     </div>
-                    <div className="container break-normal mb-5 mt-4">
+                    <div className="p-4 break-normal mb-5 mt-4">
                         <WritingEffect text={PersonalData.aboutMe}/>
                     </div>
 

@@ -19,7 +19,7 @@ const MobileNav=({path}:MobileProps)=>{
 
     return(
         <div className="min-w-full min-h-full h-full flex overflow-x-scroll dark:bg-zinc-800 bg-zinc-500 justify-center items-center py-1 shadow-xl gap-4">
-            <div className="flex justify-evenly gap-[14px] pl-4">
+            <div className="flex justify-evenly gap-[10px] pl-4">
                 {NavigationBarItem?.map((item, index) => {
                 return (
                     <button

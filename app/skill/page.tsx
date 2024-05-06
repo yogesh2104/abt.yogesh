@@ -13,20 +13,19 @@ import { experiences } from '@/lib/data/experienceData';
 import experience from "./2.json"
 import { BriefcaseBusiness } from "lucide-react";
 import CardHeader from "@/components/card-header";
-import { ThemeWrapper } from "@/components/theme-wrapper";
 
 const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django","Docker","Git","HTML","JavaScript","MongoDB","NextJs","Python","React","Strapi","Tailwind","Typescript"]
 
 
 const SkillPage=()=>{
     return(
-        <ThemeWrapper className="w-full">
+        <>
             <div className="w-full lg:-mt-[50px]">
                 <div className="relative z-50 lg:mt-[-70px]">
-                    <div className="flex justify-center my-5 lg:py-2">
+                    <div className="flex justify-center my-2 lg:py-5">
                         <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-primary"></span>
-                        <span className="bg-primary text-white p-2 px-5 text-xl rounded-md">Skills</span>
+                        <span className="bg-primary w-fit text-white dark:text-black p-1 px-5 text-lg md:text-xl rounded-md">Skill</span>
                         <span className="w-24 h-[2px] bg-primary"></span>
                         </div>
                     </div>
@@ -83,7 +82,7 @@ const SkillPage=()=>{
                     <div className="flex justify-center my-5 lg:py-8">
                         <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-primary"></span>
-                        <span className="bg-primary w-fit text-white dark:text-black p-2 px-5 text-xl rounded-md">Experiences</span>
+                        <span className="bg-primary w-fit text-white dark:text-black p-1 px-5 text-lg md:text-xl rounded-md">Experiences</span>
                         <span className="w-24 h-[2px] bg-primary"></span>
                         </div>
                     </div>
@@ -128,7 +127,7 @@ const SkillPage=()=>{
                     </div>
                 </div>      
             </div>
-        </ThemeWrapper>
+        </>
     )
 }
 

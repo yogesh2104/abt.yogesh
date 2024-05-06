@@ -17,7 +17,7 @@ const EduPage=()=>{
                 <div className="flex justify-center ">
                     <div className="flex  items-center">
                     <span className="w-24 h-[2px] bg-primary"></span>
-                    <span className="bg-primary text-white dark:text-black p-2 px-5 text-xl rounded-md">Education</span>
+                    <span className="bg-primary text-white dark:text-black p-1 px-5 text-lg md:text-xl rounded-md">Education</span>
                     <span className="w-24 h-[2px] bg-primary"></span>
                     </div>
                 </div>
