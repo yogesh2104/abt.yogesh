@@ -30,9 +30,11 @@ const ProjectPage=()=>{
                         {ProjectData.slice(0, 4).map((item, i) => (
                             <ProjectGridItem
                                 key={i}
-                                title={item.name}
-                                // description={item.description}
-                                header={item.name}
+                                name={item.name}
+                                description={item.image}
+                                role={item.role}
+                                code={item.code}
+                                demo={item.demo}
                                 className={item.className}
                             />
                         ))}
