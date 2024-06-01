@@ -88,6 +88,8 @@ export default function Home() {
     return sortedExpressions[0];
   };
 
+  console.log("expression",expression);
+  
   return (
     <>
       <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{ display: 'none' }}></video>
