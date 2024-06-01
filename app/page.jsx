@@ -15,6 +15,7 @@ export default function Home() {
   const videoRef = useRef(null);
   const [expression, setExpression] = useState(null);
   const [config,setConfig] = useConfig();
+  const [timeoutId, setTimeoutId] = useState(null);
 
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Home() {
           new faceapi.TinyFaceDetectorOptions()
         ).withFaceLandmarks().withFaceExpressions();
         if (detections.length > 0) {
+          clearTimeout(timeoutId)
           const detectedExpression = getDominantExpression(detections[0].expressions);
           
           const getColor = getColorForExpression(detectedExpression[0])
@@ -78,9 +80,31 @@ export default function Home() {
             clearInterval(interval);
             setExpression(detectedExpression);
           }, 500);
+        }else{
+        const newTimeoutId = setTimeout(() => {
+          stopVideoStream();
+          clearInterval(interval);
+          const theme = themes.find((theme) => theme.name === "orange");
+          setConfig({
+            theme: theme.name,
+            cssVars: theme.cssVars,
+            style: "default",
+          })
+
+          setExpression((prev) => {
+            if (prev == null) {
+              return ['happy', 1];
+            }
+            return prev;
+          });
+
+
+        }, 10000);
+        setTimeoutId(newTimeoutId);
         }
       }
     }, 1000);
+
   };
 
   const getDominantExpression = (expressions)=> {
@@ -88,8 +112,6 @@ export default function Home() {
     return sortedExpressions[0];
   };
 
-  console.log("expression",expression);
-  
   return (
     <>
       <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{ display: 'none' }}></video>
