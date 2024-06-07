@@ -1,7 +1,6 @@
 "use client"
 import CardHeader from "@/components/card-header";
 import Typer from "@/components/typer";
-import { Button } from "@/components/ui/button";
 import { PersonalData } from "@/lib/data/personalData";
 import { ArrowDownToLine, Contact, Github, Linkedin, LoaderIcon } from "lucide-react";
 import Link from "next/link";
@@ -10,6 +9,7 @@ import * as faceapi from 'face-api.js';
 import { getColorForExpression } from "@/lib/get-color-for-expression";
 import { themes } from "@/lib/themes";
 import { useConfig } from "@/hook/use-config";
+import ThreeDButton from "@/components/ui/three-d-button";
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -147,20 +147,18 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-6">
               <Link href="/contact-us">
-                <Button variant="outline" className="h-10 text-primary dark:border-white border-black text-xs rounded-lg text-center md:text-sm font-medium uppercase tracking-wider no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3">
-                  <span>Contact me</span>
-                  <Contact className="h-4 w-4"/>
-                </Button>
+                <ThreeDButton className="w-36 text-xs">
+                  Contact me
+                  <Contact className="ml-1 h-4 w-4"/>
+                </ThreeDButton>
               </Link>
 
-              <Link role="button" target="_blank" href={PersonalData?.resume}>
-                <Button variant="outline" className="h-10 text-primary dark:border-white border-black text-xs rounded-lg text-center md:text-sm font-medium uppercase tracking-wider no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3" >
-                  <span>Get Resume</span>
-                  <ArrowDownToLine className="h-4 w-4" />
-                </Button>
-              </Link>
+              <ThreeDButton className="w-36 ">
+                Get Resume
+                <ArrowDownToLine className="ml-1 h-4 w-4"/>
+              </ThreeDButton>
             </div>
 
           </div>
@@ -225,7 +223,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>}
+      </section>
+    }
     </>
   );
 }

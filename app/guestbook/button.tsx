@@ -1,37 +1,35 @@
 'use client';
 
-import { Github } from 'lucide-react';
+import { Github,LogIn } from 'lucide-react';
 import { signIn, signOut } from 'next-auth/react';
-import { Button } from "@/components/ui/button"
+import ThreeDButton from "@/components/ui/three-d-button";
 
 export function SignOut() {
     return (
-      <Button className="text-white  dark:text-black" onClick={() => signOut()}>
+      <ThreeDButton className="text-white w-36  dark:text-black" onClick={() => signOut()}>
         Sign out
-      </Button>
+      </ThreeDButton>
     );
 }
 
 export function SignInWithGit() {
   return (
-    <Button
-      className="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded text-sm inline-flex items-center leading-4 hover:text-white text-neutral-900 dark:text-neutral-100 mb-8"
+    <ThreeDButton
+      className=" "
       onClick={() => signIn('github')}
     >
-      {/* <Github className='h-5 w-5'/> */}
-      <div className="">Sign in with GitHub</div>
-    </Button>
+    <div className="p-2 text-sm">Sign in with GitHub</div>
+    </ThreeDButton>
   );
 }
 
 export function SignInWithGoogle() {
   return (
-    <Button
-      className="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded text-sm inline-flex items-center leading-4 hover:text-white text-neutral-900 dark:text-neutral-100 mb-8"
+    <ThreeDButton
+      className=" "
       onClick={() => signIn('google')}
     >
-      {/* <Github className='h-5 w-5'/> */}
-      <div className="">Sign in with Google</div>
-    </Button>
+    <div className="p-2 text-sm">Sign in with Google</div>
+    </ThreeDButton>
   );
 }

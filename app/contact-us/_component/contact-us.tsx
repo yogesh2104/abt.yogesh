@@ -11,6 +11,7 @@ import { z } from "zod"
 import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
 import CardHeader from "@/components/card-header"
 import emailjs from '@emailjs/browser';
+import ThreeDButton from "@/components/ui/three-d-button";
 
 const formSchema = z.object({
     from_name: z.string().min(2, {message: "Username must be at least 2 characters."}),
@@ -117,22 +118,23 @@ const ContactUS=()=>{
                                     <FormControl>
                                     <div className="text-start">
                                         <Label htmlFor="message" className="text-black dark:text-white">Message</Label>
-                                        <Textarea id="message" className="mt-2" placeholder="Type your message here." {...field} />
+                                        <Textarea id="message" className="mt-2 resize-none" placeholder="Type your message here." {...field} />
                                     </div>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
                                 )}
                             />
-
-                            <Button
-                                className="rounded-md dark:text-black px-5 md:px-12 py-2.5 md:py-3 mt-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline  hover:text-white hover:no-underline md:font-semibold"
-                                role="button"
-                                type="submit"
-                            >
-                                <span>Send Message</span>
-                                <Send className="h-4 w-4"/>
-                            </Button>
+                            <div className="flex justify-center mt-4">
+                                <ThreeDButton
+                                    className="rounded-md dark:text-black w-44 text-center text-xs md:text-sm  hover:text-white hover:no-underline md:font-semibold"
+                                    role="button"
+                                    type="submit"
+                                >
+                                    <span>Send Message</span>
+                                    <Send className="h-4 w-4"/>
+                                </ThreeDButton>
+                            </div>
                         </form>
                     </Form>
                 </div>

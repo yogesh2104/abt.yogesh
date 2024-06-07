@@ -22,10 +22,10 @@ export default function GuestbookPage() {
         </div>
 
         <Suspense>
-          <GuestbookForm />
           <div>
             <GuestbookEntries />
           </div>
+          <GuestbookForm />
         </Suspense>
       </section>
     );
@@ -42,7 +42,7 @@ async function GuestbookForm() {
         <SignOut />
       </div>
     ) : (
-      <div className="flex gap-2 w-full justify-center">
+      <div className="flex gap-5 w-full justify-center">
         <SignInWithGoogle/>
         <SignInWithGit />
       </div>

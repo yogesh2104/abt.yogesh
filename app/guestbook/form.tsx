@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useFormStatus } from 'react-dom';
+import ThreeDButton from "@/components/ui/three-d-button";
 
 const FormSchema = z.object({
   userEntry: z.string().min(2, {
@@ -41,13 +42,13 @@ export function InputForm() {
         render={({ field }) => (
           <FormItem>
             <FormControl>
-              <Input placeholder="Write Here..." {...field} />
+              <Input placeholder="Write Here..." className="mt-4" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
         )}
       />
-      <Button type="submit" disabled={pending}>Submit</Button>
+      <ThreeDButton type="submit" className="w-36" disabled={pending}>Submit</ThreeDButton>
       </form>
     </Form>
   )
