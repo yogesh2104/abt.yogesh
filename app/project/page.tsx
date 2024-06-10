@@ -15,7 +15,7 @@ const Skeleton = () => (
 
 const ProjectPage=()=>{
     return(
-        <div className="container lg:-mt-[50px]" id='projects'>
+        <div className="container" id='projects'>
             <div className="relative z-50">
                 <div className="flex justify-center ">
                     <div className="flex  items-center">

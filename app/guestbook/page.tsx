@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function GuestbookPage() {
     return (
-      <section className="w-full lg:-mt-[50px]">
+      <section className="w-full">
         <div className="flex justify-center mb-5">
             <div className="flex  items-center">
             <span className="w-24 h-[2px] bg-primary"></span>

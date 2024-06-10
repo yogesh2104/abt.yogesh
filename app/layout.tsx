@@ -10,7 +10,6 @@ import NavBar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from '@vercel/analytics/react';
-import Header from "@/components/header";
 import { ThemeWrapper } from "@/components/theme-wrapper";
 
 type Props = {
@@ -65,7 +64,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
                 <div className="fixed top-0 w-full mb-16 z-[999999] block lg:hidden md:hidden">
                   <MobileNav path={pathname} />
                 </div>
-                <div className="mt-16 text-center w-full">
+                <div className="text-center mt-16 lg:mt-6 w-full">
                   {children}
                   <Analytics />
                 </div>

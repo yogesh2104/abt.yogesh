@@ -10,7 +10,7 @@ export const metadata = {
 const AboutPage=()=>{
     return(
         <>
-            <div className="w-full lg:-mt-[50px]">
+            <div className="w-full">
                 <div className="relative z-50">
                     <div className="flex justify-center mb-5">
                         <div className="flex  items-center">

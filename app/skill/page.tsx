@@ -20,7 +20,7 @@ const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django"
 const SkillPage=()=>{
     return(
         <>
-            <div className="w-full lg:-mt-[50px]">
+            <div className="w-full">
                 <div className="relative z-50 lg:mt-[-70px]">
                     <div className="flex justify-center my-2 lg:py-5">
                         <div className="flex  items-center">

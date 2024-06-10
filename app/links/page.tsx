@@ -6,7 +6,7 @@ export const metadata = {
 
 const LinksPage=()=>{
     return(
-        <div>asfasfs</div>
+        <div>Link goes here!</div>
     )
 }
 export default LinksPage

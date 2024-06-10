@@ -2,12 +2,9 @@
 
 import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-
-import { Style } from "@/lib/styles";
 import { Theme, CssVars, themes } from "@/lib/themes";
 
 type Config = {
-  style: Style["name"];
   theme: Theme["name"];
   cssVars: {
     light: Partial<CssVars["light"]>;
@@ -16,12 +13,11 @@ type Config = {
 };
 
 const configAtom = atomWithStorage<Config>("config", {
-  style: "default",
-  theme: "zinc",
+  theme: "yellow",
   cssVars: {
-    light: themes.find((theme) => theme.name === "zinc")?.cssVars
+    light: themes.find((theme) => theme.name === "yellow")?.cssVars
       .light as Partial<CssVars["light"]>,
-    dark: themes.find((theme) => theme.name === "zinc")?.cssVars
+    dark: themes.find((theme) => theme.name === "yellow")?.cssVars
       .dark as Partial<CssVars["dark"]>,
   },
 });

@@ -12,7 +12,7 @@ export const metadata = {
 
 const EduPage=()=>{
     return(
-        <div className="container lg:-mt-[50px]">
+        <div className="container">
             <div className="relative z-50">
                 <div className="flex justify-center ">
                     <div className="flex  items-center">

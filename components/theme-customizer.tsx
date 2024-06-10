@@ -36,8 +36,7 @@ export function ThemeCustomizer() {
                     onClick={() =>
                       setConfig({
                         theme: theme.name,
-                        cssVars: theme.cssVars as any,
-                        style: "default",
+                        cssVars: theme.cssVars as any
                       })
                     }
                     className={cn(
