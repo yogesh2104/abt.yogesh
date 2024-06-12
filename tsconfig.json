@@ -22,7 +22,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "#site/content": ["./.velite"]
+      "#post/content": ["./.velite"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/data/personalData.js","lib/data/projectData.js","lib/data/educationData.js","lib/data/experienceData.js"],
