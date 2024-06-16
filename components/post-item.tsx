@@ -10,7 +10,7 @@ interface PostProps{
     date:string;
 }
 
-const PostItem = ({slug,title,description,date}:PostProps) =>{
+const BlogItem = ({slug,title,description,date}:PostProps) =>{
     const getDate = new Date(date);
     
     return(
@@ -41,4 +41,4 @@ const PostItem = ({slug,title,description,date}:PostProps) =>{
     )
 }
 
-export default PostItem
+export default BlogItem

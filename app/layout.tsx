@@ -64,7 +64,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
                 <div className="fixed top-0 w-full mb-16 z-[999999] block lg:hidden md:hidden">
                   <MobileNav path={pathname} />
                 </div>
-                <div className="text-center mt-16 lg:mt-6 w-full">
+                <div className="mt-16 lg:mt-6 w-full">
                   {children}
                   <Analytics />
                 </div>

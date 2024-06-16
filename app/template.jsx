@@ -16,12 +16,12 @@ export default function Template({ children }) {
   const [config,setConfig] = useConfig();
   const [timeoutId, setTimeoutId] = useState(null);
 
-  // useEffect(() => {
-  //     if (expression === null) {
-  //         startVideo();
-  //         loadModels();
-  //     }
-  // }, [expression]);
+  useEffect(() => {
+      if (expression === null) {
+          startVideo();
+          loadModels();
+      }
+  }, [expression]);
 
   const startVideo = () => {
     navigator.mediaDevices.getUserMedia({ video: true })
@@ -112,14 +112,14 @@ export default function Template({ children }) {
 
   return(
       <div>
-          {/* <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{display:"none"}} ></video>
+          <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{display:"none"}} ></video>
           {expression==null ?  
           <div className="flex justify-center items-center h-[400px]">
               <LoaderIcon className="h-6 w-6 text-primary animate-spin"/>
           </div> :<>{children}</> 
-          }  */}
+          } 
 
-{children}
+{/* {children} */}
       </div>
   )
 }

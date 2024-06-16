@@ -15,9 +15,9 @@ const Footer=()=>{
                     <p className="text-sm text-black dark:text-white">© Developer Portfolio by 
                     <Link target="_blank" href={PersonalData.linkedIn} className="text-primary ml-1">{PersonalData?.name}</Link></p>
                 </div>
-                <div className="order-last md:order-1 mt-2">
+                {/* <div className="order-last md:order-1 mt-2">
                     <ThemeCustomizer/>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-5 order-2">
                     <Link
                         target="_blank"

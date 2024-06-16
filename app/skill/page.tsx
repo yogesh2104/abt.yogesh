@@ -21,7 +21,7 @@ const SkillPage=()=>{
     return(
         <>
             <div className="w-full">
-                <div className="relative z-50 lg:mt-[-70px]">
+                <div className="relative z-50 ">
                     <div className="flex justify-center my-2 lg:py-5">
                         <div className="flex  items-center">
                         <span className="w-24 h-[2px] bg-primary"></span>
