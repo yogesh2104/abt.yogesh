@@ -1,15 +1,3 @@
-// const nextConfig = {
-//     logging: {
-//       fetches: {
-//         fullUrl: true,
-//       },
-//     },
-//     transpilePackages: ['next-mdx-remote'],   
-// };
-
-// export default nextConfig;
-
-
 import { build } from "velite";
 
 /** @type {import('next').NextConfig} */
