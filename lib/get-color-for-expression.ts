@@ -38,7 +38,7 @@ export function getColorForExpression(expression: Expression): string {
     happy: "yellow",
     neutral: "neutral",
     sad: "blue",
-    surprised: "violet"
+    surprised: "Orange"
   };
 
   return expressionToColor[expression]

@@ -1,6 +1,4 @@
-import ProjectCard from "@/components/project-card"
-import {ProjectData} from "@/lib/data/projectData"
-import { ProjectGrid,ProjectGridItem } from "@/components/project-grid";
+import { ProjectGridView } from "@/components/project-grid";
 
 
 export const metadata = {
@@ -26,19 +24,7 @@ const ProjectPage=()=>{
                 </div>
                 
                 <div className="mt-4">
-                    <ProjectGrid className="mx-auto md:auto-rows-[20rem]">
-                        {ProjectData.slice(0, 4).map((item, i) => (
-                            <ProjectGridItem
-                                key={i}
-                                name={item.name}
-                                description={item.image}
-                                role={item.role}
-                                code={item.code}
-                                demo={item.demo}
-                                className={item.className}
-                            />
-                        ))}
-                    </ProjectGrid>
+                    <ProjectGridView/>
                 </div>
                 
             </div>

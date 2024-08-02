@@ -45,7 +45,7 @@ const NavBar=({path}:NavbarProps)=>{
                         onClick={() => router.replace(item.slug)}
                     >
                         <div className="p-2">
-                        <item.icon  className="text-zinc-100 h-4 w-4" />
+                        <item.icon  className="text-white h-4 w-4" />
                         </div>
                         {tooltipVisibility[index] && (
                         <span className="absolute min-w-full text-[0.75rem] leading-none left-10 p-[0.62rem] rounded shadow-xl text-zinc-200 dark:bg-zinc-700 bg-zinc-800">
