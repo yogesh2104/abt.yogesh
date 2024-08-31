@@ -7,7 +7,6 @@ export const metadata = {
 import {Fragment} from "react"
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import AnimationImg from "@/components/animation/animation-img";
 import { PersonalData } from "@/lib/data/personalData";
 import { experiences } from '@/lib/data/experienceData';
 import experience from "./2.json"
@@ -89,11 +88,7 @@ const SkillPage=()=>{
 
                     <div className="py-8">
                         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-                            <div className="flex justify-center items-start">
-                                <div className="w-full h-full">
-                                    <AnimationImg animationPath={experience} className="sm:w-44 lg:w-96"/>
-                                </div>
-                            </div>
+                           
                             <div>
                                 {experiences.map((exp)=>{
                                 return(

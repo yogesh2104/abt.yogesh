@@ -1,22 +1,10 @@
 import { type ClassValue, clsx } from "clsx"
-import { Brain, FolderKanban, Home, Paperclip, SquareLibrary, SquareTerminal, User ,GraduationCap,FileQuestion, PhoneCall, Rss} from "lucide-react"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const NavigationBarItem=[
-  {name:'Home',slug:'/',icon:Home},
-  {name:"Education",slug:"/education",icon:GraduationCap},
-  {name:'Project',slug:'/project',icon:FolderKanban},
-  {name:'Skill',slug:'/skill',icon:SquareLibrary},
-  {name:'Guest Book',slug:'/guestbook',icon:FileQuestion},
-  {name:'Blog',slug:'/blog',icon:Rss},
-  {name:'About',slug:'/about',icon:User},
-  {name:'Contact',slug:'/contact-us',icon:PhoneCall},
-//  {name:'Terminal',slug:'/terminal',icon: SquareTerminal }
-]
 
 
 export function timeConverter(isoTime:any) {

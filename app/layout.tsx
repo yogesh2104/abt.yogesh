@@ -1,16 +1,20 @@
-import { Inter } from "next/font/google";
+import { Calistoga, } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils"
-const inter = Inter({ subsets: ["latin"] });
 import type { Metadata ,ResolvingMetadata} from 'next'
 import { headers } from 'next/headers'
 import { ThemeProvider } from "@/components/theme-provider";
-import MobileNav from "@/components/mobile-nav";
-import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
+import { FloatingDock } from "@/components/floating-dock";
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeWrapper } from "@/components/theme-wrapper";
+import grainImage from "./../public/images/grain.jpg"
+import { ShootingStars } from "@/components/shooting-stars";
+import { StarsBackground } from "@/components/stars-background";
+
+
+
+const calistoga = Calistoga({ subsets: ["latin"],variable:"--font-sans",weight:["400"] })
 
 type Props = {
   params: { id: string }
@@ -53,28 +57,31 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   const pathname = headers().get('x-next-pathname') as string;
   return (
     <html lang="en">
-      <body className={cn("bg-background",inter.className)}>
-        <ThemeProvider> 
-          <ThemeWrapper className="w-full">
-            <main className="flex selection:bg-zinc-200/30 flex-col overflow-x-hidden min-h-[84.4vh] items-center font-serif max-h-auto relative">
-              <div className="flex w-full h-full lg:w-[85%] md:w-2/3">
-                <div className="w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block">
-                  <NavBar path={pathname} />
-                </div>
-                <div className="fixed top-0 w-full mb-16 z-[999999] block lg:hidden md:hidden">
-                  <MobileNav path={pathname} />
-                </div>
-                <div className="mt-16 lg:mt-6 w-full">
-                  {children}
-                  <Analytics />
-                </div>
-                <Toaster />
+    <body className={cn("bg-background antialiased font-sans",calistoga.variable)}>
+      <ThemeProvider> 
+        <ThemeWrapper className="w-full h-screen">
+          <main className="flex flex-col overflow-x-hidden items-center relative flex-grow h-screen">
+            <div 
+              className="absolute inset-0 -z-30 opacity-5" 
+              style={{backgroundImage:`url(${grainImage.src})`}}
+            />
+            <div className="size-[450px] hero-ring"/>
+            <div className="size-[650px] hero-ring "/>
+            <div className="size-[760px] hero-ring"/>
+            <div className="flex w-full lg:w-[85%] md:w-2/3 flex-grow">
+              <div className="lg:mt-6 w-full z-30">
+                {children}
+                <Analytics />
               </div>
-            </main>
-            <Footer/>
-          </ThemeWrapper>
-        </ThemeProvider>
-      </body>
-    </html>
+                <FloatingDock/>
+              <Toaster />
+            </div>
+          </main>
+          <ShootingStars />
+          <StarsBackground />
+        </ThemeWrapper>
+      </ThemeProvider>
+    </body>
+  </html>
   );
 }

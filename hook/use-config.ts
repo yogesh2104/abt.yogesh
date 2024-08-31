@@ -13,11 +13,11 @@ type Config = {
 };
 
 const configAtom = atomWithStorage<Config>("config", {
-  theme: "yellow",
+  theme: "green",
   cssVars: {
-    light: themes.find((theme) => theme.name === "yellow")?.cssVars
+    light: themes.find((theme) => theme.name === "green")?.cssVars
       .light as Partial<CssVars["light"]>,
-    dark: themes.find((theme) => theme.name === "yellow")?.cssVars
+    dark: themes.find((theme) => theme.name === "green")?.cssVars
       .dark as Partial<CssVars["dark"]>,
   },
 });

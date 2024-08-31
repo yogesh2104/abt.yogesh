@@ -11,7 +11,7 @@ import { z } from "zod"
 import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
 import CardHeader from "@/components/card-header"
 import emailjs from '@emailjs/browser';
-import ThreeDButton from "@/components/ui/three-d-button";
+import ElevatedButton from "@/components/elevated-button"
 
 const formSchema = z.object({
     from_name: z.string().min(2, {message: "Username must be at least 2 characters."}),
@@ -126,14 +126,16 @@ const ContactUS=()=>{
                                 )}
                             />
                             <div className="flex justify-center mt-4 mb-3">
-                                <ThreeDButton
-                                    className="rounded-md dark:text-black w-44 text-center text-xs md:text-sm  hover:text-white hover:no-underline md:font-semibold"
+                                <ElevatedButton
+                                    className=" rounded-md dark:text-black w-44 text-center text-xs md:text-sm  hover:text-white hover:no-underline md:font-semibold"
                                     role="button"
                                     type="submit"
                                 >
-                                    <span>Send Message</span>
-                                    <Send className="h-4 w-4"/>
-                                </ThreeDButton>
+                                    <span className="flex items-center gap-3">
+                                        Send Message
+                                        <Send className="h-4 w-4"/>
+                                    </span>
+                                </ElevatedButton>
                             </div>
                         </form>
                     </Form>

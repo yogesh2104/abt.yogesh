@@ -2,34 +2,34 @@
 
 import { Github,LogIn } from 'lucide-react';
 import { signIn, signOut } from 'next-auth/react';
-import ThreeDButton from "@/components/ui/three-d-button";
+import ElevatedButton from "@/components/elevated-button";
 
 export function SignOut() {
     return (
-      <ThreeDButton className="text-white w-36  dark:text-black" onClick={() => signOut()}>
+      <ElevatedButton className="text-white w-36  dark:text-black" onClick={() => signOut()}>
         Sign out
-      </ThreeDButton>
+      </ElevatedButton>
     );
 }
 
 export function SignInWithGit() {
   return (
-    <ThreeDButton
+    <ElevatedButton
       className=" "
       onClick={() => signIn('github')}
     >
     <div className="p-2 text-sm">Sign in with GitHub</div>
-    </ThreeDButton>
+    </ElevatedButton>
   );
 }
 
 export function SignInWithGoogle() {
   return (
-    <ThreeDButton
+    <ElevatedButton
       className=" "
       onClick={() => signIn('google')}
     >
     <div className="p-2 text-sm">Sign in with Google</div>
-    </ThreeDButton>
+    </ElevatedButton>
   );
 }

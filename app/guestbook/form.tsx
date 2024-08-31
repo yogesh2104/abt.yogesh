@@ -5,11 +5,10 @@ import { saveGuestbookEntry } from '../db/actions';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
 import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useFormStatus } from 'react-dom';
-import ThreeDButton from "@/components/ui/three-d-button";
+import ElevatedButton from '@/components/elevated-button';
 
 const FormSchema = z.object({
   userEntry: z.string().min(2, {
@@ -48,7 +47,7 @@ export function InputForm() {
           </FormItem>
         )}
       />
-      <ThreeDButton type="submit" className="w-36" disabled={pending}>Submit</ThreeDButton>
+      <ElevatedButton type="submit" className="w-36" disabled={pending}>Submit</ElevatedButton>
       </form>
     </Form>
   )
