@@ -62,13 +62,13 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <ThemeWrapper className="w-full h-screen">
           <main className="flex flex-col overflow-x-hidden items-center relative flex-grow h-screen">
             <div 
-              className="hidden dark:block absolute inset-0 -z-30 opacity-5" 
+              className="hidden dark:block absolute inset-0 -z-30 opacity-5 h-max" 
               style={{backgroundImage:`url(${grainImage.src})`}}
             />
             <div className="size-[450px] hero-ring"/>
             <div className="size-[650px] hero-ring "/>
             <div className="size-[760px] hero-ring"/>
-            <div className="flex w-full lg:w-[85%] md:w-2/3 flex-grow">
+            <div className="flex flex-grow">
               <div className="lg:mt-6 w-full z-30">
                 {children}
                 <Analytics />

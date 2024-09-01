@@ -82,7 +82,7 @@ const BlogDetails=async({params}:BlogDetailsProps)=>{
           <GoBack/>
           <h1 className="mb-2 text-3xl text-primary">{blog.title}</h1>
           {blog.description ? (
-              <p className="text-xl mt-0 text-muted-foreground">{blog.description}</p>
+              <p className="text-xl mt-0 ">{blog.description}</p>
           ) : null}
           <hr className="my-4" />
           <MDXContent code={blog.body} />

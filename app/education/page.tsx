@@ -44,7 +44,7 @@ const educationsV2 = [
 
 const EduPage=()=>{
   return(
-    <div className="min-h-max text-white">
+    <div className="container min-h-max text-white">
       <div className=" text-white p-6 font-sans">
         <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Education<span className="text-primary">.</span></h1>
 

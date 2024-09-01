@@ -11,15 +11,17 @@ export const metadata = {
 
 export default function GuestbookPage() {
   return (
-    <section className="text-white p-8 font-sans mb-16">
-      <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
-      <div className="border-t border-gray-700 pt-8">
-        <Suspense fallback={<div className="text-gray-400">Loading...</div>}>
-          <GuestbookEntries />
-          <GuestbookForm />
-        </Suspense>
-      </div>
-    </section>
+    <div className="container">
+      <section className="text-white p-8 font-sans mb-16">
+        <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
+        <div className="border-t border-gray-700 pt-8">
+          <Suspense fallback={<div className="text-gray-400">Loading...</div>}>
+            <GuestbookEntries />
+            <GuestbookForm />
+          </Suspense>
+        </div>
+      </section>
+    </div>
   )
 }
 
