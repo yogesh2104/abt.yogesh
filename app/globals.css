@@ -76,6 +76,11 @@
   }
 }
 
+@layer utilities{
+  .container{
+    @apply lg:max-w-5xl
+  }
+}
 
 /* 3d button style */
 .button {
