@@ -25,6 +25,6 @@
       "#post/content": ["./.velite"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/data/personalData.js","lib/data/projectData.js","lib/data/educationData.js","lib/data/experienceData.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "config/site.js"],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-// import { educations } from '@/lib/data/educationData';
+// import { siteConfig } from "@/config/site"
 // import {Timeline} from "@/components/timeline"
 
 
@@ -69,7 +69,7 @@ const EduPage=()=>{
         ))}
 
       </div>
-      {/* <Timeline data={educations} /> */}
+      {/* <Timeline data={siteConfig.educations} /> */}
     </div>
   )
 }

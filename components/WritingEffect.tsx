@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, stagger, useAnimate } from "framer-motion"
-import { PersonalData } from "@/lib/data/personalData"
-
+import { siteConfig } from "@/config/site"
 
 export const WritingEffect = ({
   words,
@@ -99,8 +98,8 @@ export const WritingEffect = ({
           </div>
           
           <div className="space-y-4">
-              <Badge title="Use at work" items={PersonalData.workItems} />
-              <Badge title="Use for fun" items={PersonalData.funItems} />
+              <Badge title="Use at work" items={siteConfig.personalData.workItems} />
+              <Badge title="Use for fun" items={siteConfig.personalData.funItems} />
           </div>
         </div>
       </div>

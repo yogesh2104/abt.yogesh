@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation"
 export const GoBack=()=>{
     const router = useRouter()
     return(
-        <MoveLeft className="h-6 w-6 cursor-pointer" onClick={()=>router.back()}/>
+        <div className="flex gap-4 cursor-pointer">
+            <MoveLeft className="h-6 w-6" onClick={()=>router.back()}/> <span>Go Back</span>
+        </div>
     )
 }

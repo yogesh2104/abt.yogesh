@@ -78,9 +78,9 @@ const BlogDetails=async({params}:BlogDetailsProps)=>{
     }
 
     return(
-        <article className="container py-6 prose dark:prose-invert max-w-4xl">
+        <article className="container py-6 max-w-4xl">
           <GoBack/>
-          <h1 className="mb-2">{blog.title}</h1>
+          <h1 className="mb-2 text-3xl text-primary">{blog.title}</h1>
           {blog.description ? (
               <p className="text-xl mt-0 text-muted-foreground">{blog.description}</p>
           ) : null}

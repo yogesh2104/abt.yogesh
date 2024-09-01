@@ -1,6 +1,5 @@
 import { WritingEffect } from '@/components/WritingEffect';
-import { PersonalData } from '@/lib/data/personalData';
-
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
     title: 'abt-yogesh || about',
@@ -13,7 +12,7 @@ const AboutPage=()=>{
             <div className="w-full">
                 <div className="relative z-50">
                     <div className="p-4 break-normal mb-5">
-                        <WritingEffect words={PersonalData.aboutMe}/>
+                        <WritingEffect words={siteConfig.personalData.aboutMe}/>
                     </div>
                 </div>
             </div>

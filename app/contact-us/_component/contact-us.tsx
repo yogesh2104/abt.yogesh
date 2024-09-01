@@ -46,7 +46,7 @@ const ContactUS=()=>{
 
     return(
         <>
-        <div className=" text-white p-8 font-sans">
+        <div className="p-8 font-sans ">
             <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Contact<span className="text-primary">.</span></h1>
         
             <div className="border-t border-gray-700 pt-8">
@@ -61,7 +61,7 @@ const ContactUS=()=>{
                             <Input
                             placeholder="Your Name"
                             {...field}
-                            className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                            className="border-gray-700 text-white placeholder-gray-400"
                             />
                         </FormControl>
                         <FormMessage />
@@ -78,7 +78,7 @@ const ContactUS=()=>{
                             type="email"
                             placeholder="Your Email"
                             {...field}
-                            className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                            className="border-gray-700 text-white placeholder-gray-400"
                             />
                         </FormControl>
                         <FormMessage />
@@ -94,7 +94,7 @@ const ContactUS=()=>{
                             <Textarea
                             placeholder="Your Message"
                             {...field}
-                            className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 resize-none"
+                            className="border-gray-700 text-white placeholder-gray-400 resize-none"
                             rows={4}
                             />
                         </FormControl>
@@ -104,7 +104,7 @@ const ContactUS=()=>{
                     />
                     <div className="flex justify-center mt-4 mb-3">
                         <ElevatedButton
-                            className=" rounded-md dark:text-black w-44 text-center text-xs md:text-sm  hover:text-white hover:no-underline md:font-semibold"
+                            className=""
                             role="button"
                             type="submit"
                         >

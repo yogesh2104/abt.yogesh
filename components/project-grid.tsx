@@ -3,10 +3,10 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hook/use-outside-click";
-import {ProjectData} from "@/lib/data/projectData"
+import { siteConfig } from "@/config/site";
 
 export function ProjectGridView() {
-  const [active, setActive] = useState<(typeof ProjectData)[number] | boolean | null>(null);
+  const [active, setActive] = useState<(typeof siteConfig.projectData)[number] | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -143,7 +143,7 @@ export function ProjectGridView() {
       </AnimatePresence>
       
       <ul className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-        {ProjectData.map((project, index) => (
+        {siteConfig.projectData.map((project, index) => (
           <motion.div
             layoutId={`project-${project.name}-${id}`}
             key={project.name}

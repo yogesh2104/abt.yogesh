@@ -10,58 +10,11 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import {AlignJustify, Moon, Sun}  from "lucide-react"
-import { FolderKanban, Home, SquareLibrary, SquareTerminal, User ,GraduationCap,FileQuestion, PhoneCall, Rss} from "lucide-react"
+import {AlignJustify,  Moon, Sun}  from "lucide-react"
+
 import { useTheme } from "next-themes";
-
-
-const NavigationBarItem = [
-    {
-      title: 'Home',
-      href: '/',
-      icon: (<Home className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: "Education",
-      href: "/education",
-      icon: (<GraduationCap className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Project',
-      href: '/project',
-      icon: (<FolderKanban className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Skill',
-      href: '/skill',
-      icon: (<SquareLibrary className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Guest Book',
-      href: '/guestbook',
-      icon: (<FileQuestion className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Blog',
-      href: '/blog',
-      icon: (<Rss className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'About',
-      href: '/about',
-      icon: (<User className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Contact',
-      href: '/contact-us',
-      icon: (<PhoneCall className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    },
-    {
-      title: 'Terminal',
-      href: '/terminal',
-      icon: (<SquareTerminal className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-    }
-];
+import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 export const FloatingDock = ({
   desktopClassName,
@@ -70,10 +23,17 @@ export const FloatingDock = ({
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
+  const pathname = usePathname()
+  function hasSomethingAfterBlog(path:string) {
+    const blogPath = '/blog';
+
+    return path.startsWith(blogPath) && path.length > blogPath.length;
+  }
+
   return (
-    <div className="fixed bottom-5 left-0 right-0 flex items-center justify-center h-[3rem] w-full z-50 pointer-events-auto">
-      <FloatingDockDesktop items={NavigationBarItem} className={desktopClassName} />
-      <FloatingDockMobile items={NavigationBarItem} className={mobileClassName} />
+    <div className="fixed bottom-5 left-0 right-0 flex items-center justify-center h-[3rem] w-full z-50">
+      {hasSomethingAfterBlog(pathname) || <FloatingDockDesktop items={siteConfig.navigationBarItem} className={desktopClassName}/>}
+      <FloatingDockMobile items={siteConfig.navigationBarItem} className={mobileClassName} isBlog={hasSomethingAfterBlog(pathname)}/>
     </div>
   );
 };
@@ -81,9 +41,11 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
     items,
     className,
+    isBlog
   }: {
     items: { title: string; icon: React.ReactNode; href: string }[];
     className?: string;
+    isBlog:boolean
   }) => {
     const [open, setOpen] = useState(false);
     const { theme, setTheme } = useTheme();
@@ -92,7 +54,7 @@ const FloatingDockMobile = ({
     useEffect(() => setMounted(true), []);
 
     return (
-      <div className={cn("fixed left-2 bottom-0 md:hidden", className)}>
+      <div className={cn(isBlog ? "fixed left-2 md:left-36 bottom-2":"fixed left-2 bottom-2 md:hidden", className)}>
         <AnimatePresence>
           {open && (
             <motion.div

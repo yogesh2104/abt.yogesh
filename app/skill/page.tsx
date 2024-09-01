@@ -7,9 +7,7 @@ export const metadata = {
 import {Fragment} from "react"
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { PersonalData } from "@/lib/data/personalData";
-import { experiences } from '@/lib/data/experienceData';
-import experience from "./2.json"
+import { siteConfig } from "@/config/site";
 import { BriefcaseBusiness } from "lucide-react";
 import CardHeader from "@/components/card-header";
 
@@ -28,7 +26,7 @@ const SkillPage=()=>{
                         <span className="w-24 h-[2px] bg-primary"></span>
                         </div>
                     </div>
-                    <div className="container text-primary break-normal mb-5 text-justify">{PersonalData?.skillDes}</div>
+                    <div className="container text-primary break-normal mb-5 text-justify">{siteConfig.personalData?.skillDes}</div>
 
                     <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
                     <div className="flex justify-center -translate-y-[1px]">
@@ -90,7 +88,7 @@ const SkillPage=()=>{
                         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                            
                             <div>
-                                {experiences.map((exp)=>{
+                                {siteConfig.experiences.map((exp)=>{
                                 return(
                                     <Fragment key={exp.id}>
                                         <div className=" border-black dark:border-white relative rounded-lg border mb-4">
