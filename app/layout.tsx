@@ -68,7 +68,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
             <div className="size-[450px] hero-ring"/>
             <div className="size-[650px] hero-ring "/>
             <div className="size-[760px] hero-ring"/>
-            <div className="flex flex-grow">
+            <div className="container flex flex-grow">
               <div className="lg:mt-6 w-full z-30">
                 {children}
                 <Analytics />
