@@ -18,10 +18,10 @@ export default function Home() {
           This is <span className="text-primary">{siteConfig.personalData.name}</span>
           {`, I'm a Professional `}
           <Typer data={siteConfig.personalData.typerData} />
-          <p className="mt-4 text-lg font-normal text-gray-600 dark:text-gray-300 font-serif">
-            I build responsive and interactive web applications with a <br/> focus on performance and user experience.
-          </p>
         </h1>
+        <p className="mt-4 text-center text-lg font-normal text-gray-600 dark:text-gray-300 font-serif max-w-md mx-auto">
+          I build responsive and interactive web applications with a focus on performance and user experience.
+        </p>
 
         <div className="my-12 flex items-center gap-5">
           <Link
