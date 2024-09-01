@@ -1,4 +1,3 @@
-import { ProjectGridView } from "@/components/project-grid";
 import { ProjectView } from "@/components/project-view";
 
 
@@ -14,13 +13,12 @@ const Skeleton = () => (
 
 const ProjectPage=()=>{
     return(
-        <div className="container lg:max-w-5xl" id='projects'>
+        <div className="lg:max-w-5xl" id='projects'>
             <div className="text-white p-6 font-sans">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Project<span className="text-primary">.</span></h1>
                 
                 <div className="mt-4">
                     <ProjectView/>
-                    {/* <ProjectGridView/> */}
                 </div>
                 
             </div>

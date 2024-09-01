@@ -78,14 +78,17 @@ export const siteConfig = {
     ],
     projectData: [
       {
-        id: 1,
         name: "Noter",
-        description: "This is Notion clone. Noter serves as the collaborative workspace where enhanced and more efficient work takes place.",
+        title: "Notion clone.",
+        results: [
+          { title: "Noter serves as the collaborative workspace." },
+          { title: "Where enhanced and more efficient work takes place." },
+        ],
+        link: "https://noter-steel.vercel.app/",
+        code:"https://github.com/yogesh2104/noter",
+        image: '/project/noter.png',
         tools: ['NextJs', 'Convex', 'Clerk'],
         role: 'Full Stack Developer',
-        code: 'https://github.com/yogesh2104/noter',
-        demo: 'https://noter-steel.vercel.app/',
-        image: '/project/noter.png',
         content: () => {
           return (
             <>
@@ -104,23 +107,91 @@ export const siteConfig = {
         },
       },
       {
-        id: 2,
         name: "Eldora UI",
-        description: "Actively contribute in Eldora UI. This is a collection of re-usable components that you can copy and paste into your web apps.",
-        role: 'Open Source Project Maintainer',
+        title: "Re-Usable Components",
+        results: [
+          { title: "Actively contribute in Eldora UI" },
+          { title: "This is a collection of re-usable components." },
+          { title: "You can copy and paste into your web apps." },
+        ],
+        link: "www.eldoraui.site",
         code: 'https://github.com/yogesh2104/eldoraui',
-        demo: 'www.eldoraui.site',
         image: '/project/eldoraui.png',
+        tools:[],
+        role: 'Open Source Project Mantainer',
         content: () => {
           return (
             <>
-              <p>
-                Eldora UI is a collection of re-usable components that you can copy and paste into your web apps. It primarily features components, blocks, and templates geared towards creating landing pages and user-facing marketing materials.
-              </p>
+            <p>
+              Eldora UI is a collection of re-usable components that you can copy and paste into your web apps. It primarily features components, blocks, and templates geared towards creating landing pages and user-facing marketing materials.
+            </p>
             </>
           );
         },
+  
       },
+      {
+        name: "PromptForAi",
+        title: "Discover & Share AI Prompts.",
+        results: [
+          { title: "Discover AI Prompt and Share AI" },
+          { title: "Create new prompt" },
+          { title: "Also you can Search other people prompt" },
+        ],
+        link: "https://prompt-for-ai.vercel.app/",
+        image: '/project/promtForAi.png',
+        tools: ['NextJs', 'MongoDB', 'NextAuth'],
+        role: 'Full Stack Developer',
+        code: 'https://github.com/yogesh2104/promptForAI',
+        content: () => {
+          return (
+            <p>
+              PromptForAi Is the place you can Discover AI Prompt and Share AI Prompts. You can create new prompt and you can either share or save as draft. Also you can Search other people prompt. To build this project I have to use NextJs with edge runtime environment and for authentication use NextAuth(only login with Google provider) and database I have MongoDB Atlas and hosted on vercel.
+            </p>
+          );
+        },
+      },
+      {
+          name: "Smart Health Advisor",
+          title: "Predicts Diseases Based On Symptoms",
+          results: [
+            { title: "Discover AI Prompt and Share AI" },
+            { title: "Create new prompt" },
+            { title: "Also you can Search other people prompt" },
+          ],
+          link: "https://smart-health-advisor.vercel.app/",
+          image: '/project/health.png',
+          tools: ['NextJs', 'Shadcn UI', 'Django','Python'],
+          role: 'Frontend Developer',
+          code: 'https://github.com/saurabhsharma104/Smart-Health-Advisor',
+          content: () => {
+              return (
+                <p>
+                  Smart Health Advisor this is Revolutionary software predicts diseases based on symptoms, enhancing early detection and healthcare efficiency. In this project my role was frontend developer to build this project I have to use NextJs with Shadcn UI.
+                </p>
+              );
+          },
+      },
+      {
+          name: "Coding InterView",
+          title: "Coding-Interview-University Repo.",
+          results: [
+            { title: "This is simple static web page" },
+            { title: "Simplified version of coding-interview-university github repo." },
+          ],
+          link: "https://yogesh2104.github.io/CodingInterView/",
+          image: '/project/iViewer.png',
+          tools: ['HTML', 'CSS','Javascript', 'Bootstrap'],
+          role: 'Frontend Developer',
+          code: 'https://github.com/yogesh2104/CodingInterView',
+          content: () => {
+              return (
+                <p>
+                  This is simple static web page which is simplified version of coding-interview-university github repo.
+                </p>
+              );
+          },
+      }, 
     ],
     navigationBarItem :[
       {
