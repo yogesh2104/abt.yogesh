@@ -22,8 +22,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="flex justify-center py-10">
       <div className="max-w-5xl w-full px-4">
-        <div className="text-center ">
-          <h2 className="text-lg md:text-3xl mb-4 text-black dark:text-white">Education & Qualifications</h2>
+        <div className="text-center">
+        <h1 className="text-6xl font-bold mb-8 dark:text-white text-black">Education<span className="text-green-400">.</span></h1>
         </div>
 
         <div className="relative">

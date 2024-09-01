@@ -3,6 +3,8 @@ import { MDXContent } from "@/components/mdx-components";
 import type { Metadata ,ResolvingMetadata} from 'next'
 import { notFound } from "next/navigation";
 import "@/styles/mdx.css"
+import { MoveLeft } from "lucide-react";
+import { GoBack } from "@/components/go-back";
 interface BlogDetailsProps{
     params:{
         slug:string[]
@@ -77,6 +79,7 @@ const BlogDetails=async({params}:BlogDetailsProps)=>{
 
     return(
         <article className="container py-6 prose dark:prose-invert max-w-4xl">
+          <GoBack/>
           <h1 className="mb-2">{blog.title}</h1>
           {blog.description ? (
               <p className="text-xl mt-0 text-muted-foreground">{blog.description}</p>

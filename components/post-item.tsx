@@ -45,7 +45,7 @@ const BlogItem = ({slug,title,description,date}:PostProps) =>{
     const getDate = new Date(date);
     
     return(
-        <article className="flex flex-col gap-2 border-border border-b py-3 font-serif">
+        <article className="flex flex-col gap-2 border-border border-b py-3">
             <div>
                 <h2 className="text-2xl font-bold text-start text-primary">
                     <Link href={slug}>{title}</Link>
