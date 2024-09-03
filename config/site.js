@@ -21,7 +21,7 @@ export const siteConfig = {
         stackOverflow: '',
         resume: "", //google drive link
         aboutMe:`
-        I'm Yogesh Singh on the web. I'am a 23 y/o belonging to the Homo sapiens 🤣, a brother, a son, a friend, a self taugh web developer 
+        I'm Yogesh Singh on the web. I'am a 25 y/o belonging to the Homo sapiens 🤣, a brother, a son, a friend, a self taugh web developer 
         
         and programmer.I have completed MCA(Master of Computer Application). I had already started programming back when I was in Second year 
        
@@ -41,25 +41,35 @@ export const siteConfig = {
     educations: [
       {
         id: 1,
-        title: "2020-2024",
-        content: (
-          <div>
-            <h3 className="text-primary">Master of Computer Applications (MCA)</h3>
-            <p className="text-neutral-600 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8"> 
-              Noida Institute Of Engineering And Technology, Greater Noida
-            </p>
-          </div>
-        ),
+        year: "2020-2024",
+        title:"Master of Computer Applications (MCA)",
+        school:"Noida Institute Of Engineering And Technology,Greater Noida",
+        location:"UP. Greater Noida",
+        field:"Computer Application"
       },
       {
         id: 2,
-        title: "2017 - 2020",
-        content: (
-          <div>
-            <h3 className="text-primary">Bachelor of Science (B.Sc IT)</h3>
-            <p className="text-neutral-600 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8"> Anand Vishwa Gurukul Sr. Night College Thane West Maharashtra</p>
-          </div>
-        ),
+        year:"2017 - 2020",
+        title:"Bachelor of Science (B.Sc IT)",
+        school:"Anand Vishwa Gurukul Sr. Night College Thane West Maharashtr",
+        location:"Thane, Maharashtra",
+        field:"Information Technology"
+      },
+      {
+        id: 3,
+        year: "2015 - 2017",
+        title:"Higher Secondary Certificate(HSC)",
+        school:"Gaynodya Vidya Mandir Junior College Thane(W),Maharashtra",
+        location:"Thane, Maharashtra",
+        field:"Science"
+      },
+      {
+        id: 4,
+        year: "2014 - 2015",
+        title:"Secondary School Certificate(SSC)",
+        school:"Gaynodya Vidya Mandir Junior College Thane(W),Maharashtra",
+        location:"Thane, Maharashtra",
+        field:"Regular"
       },
     ],
     experiences: [
@@ -67,13 +77,44 @@ export const siteConfig = {
         id: 1,
         title: 'Salesforce developer Intern',
         company: "Cloud Analogy Private Ltd.",
-        duration: "(Feb 2022 - April 2022)"
+        duration: "(Feb 2022 - April 2022)",
+        location:"Noida",
+        project:[],
+        keyPoint:[
+          "Worked on various Salesforce modules, including Sales Cloud, and Custom Applications",
+          "Gained hands-on experience with Apex, Visualforce, and Lightning Components."
+        ] // if you do not have project then add key-Point or empty array and vice versa 
       },
       {
         id: 2,
         title: "Frontend Developer",
         company: "Weingenious Technocrats Private Ltd.",
-        duration: "(Nov 2022 - Present)"
+        duration: "(Nov 2022 - Present)",
+        location:"Surat",
+        project:[
+          {
+            name:"Time Tracking Software(SaaS) Product",
+            keyPoint:[
+              "Developed a time-tracking and employee-monitoring SaaS product for companies and remote teams using NextJS, Material UI, GraphQL, and Redux Toolkit.",
+              "Key features included time tracking with screenshots, attendance and productivity, task management, and online reports and statistics."
+            ]
+          },
+          {
+            name:"E-commerce Website for Diamond Selling",
+            keyPoint:[
+              "Developed an e-commerce website for diamond selling using Next.js, REST API, and Zustand.",
+              "Created both the customer-facing website and the admin panel to manage products, orders, and vendors efficiently. Integrate various vendor APIs to enhance the website functionality."
+            ]
+          },
+          {
+            name:"Diamond Image Renderer Full-Stack Project",
+            keyPoint:[
+              "Developed a Diamond Image Renderer that displays diamond images using third-party data, customized based on vendor requirements, within an iframe on their portal using Express.js, Node.js, MongoDB, AWS S3.",
+              "Implemented a feature allowing vendors to upload an Excel file containing the S3 folder name and additional data, which is then rendered in the iframe alongside the diamond images"
+            ]
+          }
+        ],
+        keyPoint:[] 
       }
     ],
     projectData: [
@@ -87,7 +128,7 @@ export const siteConfig = {
         link: "https://noter-steel.vercel.app/",
         code:"https://github.com/yogesh2104/noter",
         image: '/project/noter.png',
-        tools: ['NextJs', 'Convex', 'Clerk'],
+        tools: ['NextJs', 'ConvexDB', 'Clerk Auth'],
         role: 'Full Stack Developer',
         content: () => {
           return (
@@ -117,7 +158,7 @@ export const siteConfig = {
         link: "www.eldoraui.site",
         code: 'https://github.com/yogesh2104/eldoraui',
         image: '/project/eldoraui.png',
-        tools:[],
+        tools: [], // top five 
         role: 'Open Source Project Mantainer',
         content: () => {
           return (
@@ -210,8 +251,8 @@ export const siteConfig = {
         icon: (<Lightbulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
       },
       {
-        title: 'Skill',
-        href: '/skill',
+        title: 'Experience',
+        href: '/experience',
         icon: (<BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
       },
       {

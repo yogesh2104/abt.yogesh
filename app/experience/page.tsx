@@ -1,6 +1,6 @@
 
 export const metadata = {
-    title: 'abt-yogesh || skill',
+    title: 'abtyogesh || skill',
     description: 'This is the portfolio of Yogesh Sing. I am a full stack developer. I am a quick learner and I am always looking for new challenges.',
 }
 
@@ -10,6 +10,7 @@ import Marquee from "react-fast-marquee";
 import { siteConfig } from "@/config/site";
 import { BriefcaseBusiness } from "lucide-react";
 import CardHeader from "@/components/card-header";
+import { Card, CardContent } from "@/components/ui/card";
 
 const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django","Docker","Git","HTML","JavaScript","MongoDB","NextJs","Python","React","Strapi","Tailwind","Typescript"]
 
@@ -17,7 +18,101 @@ const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django"
 const SkillPage=()=>{
     return(
         <>
-            <div className="w-full">
+        {/* <div className="container min-h-max text-white">
+            <div className=" text-white p-6 font-sans">
+                <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Experience<span className="text-primary">.</span></h1>
+
+                {siteConfig.experiences.map((exp) => (
+                <div key={exp.id} className="border-t border-gray-700 pt-2 mb-4">
+                    <div className="mb-1">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                        <h2 className="text-xl sm:text-2xl font-semibold text-primary ">{exp.title}</h2>
+                        <p className="text-lg sm:text-xl dark:text-white text-black">{exp.duration}</p>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                        <h3 className="text-lg  font-semibold dark:text-white text-black font-serif">{exp.company}</h3>
+                        <p className="text-lg dark:text-white text-black">{exp.location}</p>
+                    </div>
+
+                    {exp.project.map((pro,proId)=>{
+                        return(
+                        <div key={proId}>
+                            <h3 className="text-md  font-semibold dark:text-white text-black font-serif">{pro.name}</h3>
+                            <ul>
+                                {pro.keyPoint.map((keypoint,inx)=>{
+                                    return(
+                                        <li key={inx}>{keypoint}</li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                        )
+                    })}
+
+                    <ul>
+                        {exp.keyPoint.map((keypoint,inx)=>{
+                            return(
+                                <li key={inx}>{keypoint}</li>
+                            )
+                        })}
+                    </ul>
+                    </div>
+                </div>
+                ))}
+
+            </div>
+        </div> */}
+
+            <div className="container min-h-max text-white">
+            <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Experience<span className="text-primary">.</span></h1>
+            
+            {siteConfig.experiences.map((exp) => (
+                <div key={exp.id} className="mb-8">
+                <div className="p-6">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                        <h2 className="text-2xl font-bold text-primary">{exp.title}</h2>
+                        <p className="text-lg text-gray-600 dark:text-gray-400">{exp.duration}</p>
+                    </div>
+                    <hr/>
+                    
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 mt-2">
+                        <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300">{exp.company}</h3>
+                        <p className="text-md text-gray-600 dark:text-gray-400">{exp.location}</p>
+                    </div>
+
+                    {exp.project.map((pro, proId) => (
+                    <div key={proId} className="mb-6 font-serif">
+                        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 ">{pro.name}</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                        {pro.keyPoint.map((keypoint, inx) => (
+                            <li key={inx} className="text-gray-600 dark:text-gray-400">{keypoint}</li>
+                        ))}
+                        </ul>
+                    </div>
+                    ))}
+
+                    {exp.keyPoint.length > 0 && (
+                    <ul className="list-disc pl-5 space-y-2 font-serif">
+                        {exp.keyPoint.map((keypoint, inx) => (
+                        <li key={inx} className="text-gray-600 dark:text-gray-400">{keypoint}</li>
+                        ))}
+                    </ul>
+                    )}
+
+                    {/* <div className="mt-4 flex flex-wrap gap-2">
+                    {['NextJS', 'Material UI', 'GraphQL', 'Redux Toolkit', 'REST API', 'Zustand', 'Express.js', 'Node.js', 'MongoDB', 'AWS S3', 'Salesforce', 'Apex', 'Visualforce'].map((skill) => (
+                        <Badge key={skill} variant="secondary" className="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+                        {skill}
+                        </Badge>
+                    ))}
+                    </div> */}
+                </div>
+                </div>
+            ))}
+            </div>
+
+            {/* <div className="w-full">
                 <div className="relative z-50 ">
                     <div className="flex justify-center my-2 lg:py-5">
                         <div className="flex  items-center">
@@ -119,7 +214,7 @@ const SkillPage=()=>{
                         </div>
                     </div>
                 </div>      
-            </div>
+            </div> */}
         </>
     )
 }

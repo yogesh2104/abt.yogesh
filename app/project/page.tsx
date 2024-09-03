@@ -2,7 +2,7 @@ import { ProjectView } from "@/components/project-view";
 
 
 export const metadata = {
-    title: 'abt-yogesh || project',
+    title: 'abtyogesh || project',
     description: 'This is the portfolio of Yogesh Sing. I am a full stack developer. I am a quick learner and I am always looking for new challenges.',
 }
 
@@ -14,7 +14,7 @@ const Skeleton = () => (
 const ProjectPage=()=>{
     return(
         <div className="lg:max-w-5xl" id='projects'>
-            <div className="text-white p-6 font-sans">
+            <div className="text-white p-6 font-sans sticky top-2">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Project<span className="text-primary">.</span></h1>
                 
                 <div className="mt-4">

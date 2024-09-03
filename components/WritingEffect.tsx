@@ -58,9 +58,29 @@ export const WritingEffect = ({
     )
   }
 
-  const Badge = ({ title, items }:{title:string,items:string[]}) => {
+  const Badge = ({ title, items }: { title: string; items: string[] }) => {
+    const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.1,
+        },
+      },
+    };
+
+    const itemVariants = {
+      hidden: { y: -20, opacity: 0 },
+      visible: { y: 0, opacity: 1 },
+    };
+
     return (
-      <div className="rounded-lg ">
+      <motion.div
+        className="rounded-lg"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         <h3 className="text-2xl font-bold mb-2 text-primary flex items-center">
           {title === "Use at work" ? (
             <span className="mr-2 text-green-400">⚡</span>
@@ -71,14 +91,19 @@ export const WritingEffect = ({
         </h3>
         <div className="flex flex-wrap gap-2">
           {items.map((item, index) => (
-            <span key={index} className="text-primary font-serif px-2 py-1 bg-secondary rounded-full text-sm border">
+            <motion.span
+              key={index}
+              className="text-primary font-serif px-2 py-1 bg-secondary rounded-full text-sm border"
+              variants={itemVariants}
+            >
               {item}
-            </span>
+            </motion.span>
           ))}
         </div>
-      </div>
-    )
-  }
+      </motion.div>
+    );
+  };
+
 
   
   return (
@@ -96,11 +121,11 @@ export const WritingEffect = ({
                   </div>
               </div>
           </div>
-          
+          {isFinished && 
           <div className="space-y-4">
               <Badge title="Use at work" items={siteConfig.personalData.workItems} />
               <Badge title="Use for fun" items={siteConfig.personalData.funItems} />
-          </div>
+          </div>}
         </div>
       </div>
     </div>

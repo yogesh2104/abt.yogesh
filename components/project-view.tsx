@@ -1,25 +1,40 @@
 "use client"
 
-import Link from "next/link";
 import ElevatedButton from "./elevated-button";
 import { MoveRight,CircleCheckBig } from 'lucide-react'
 import { siteConfig } from '@/config/site';
+import { useEffect, useState } from "react";
   
 
 export const ProjectView=()=>{
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 640);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+
+
     return(
         <div>
            <div className="lg:mb-16">
             <div className="flex flex-col md:mt-10 gap-20 mt-4">
-                {siteConfig.projectData.map((project)=>(
-                    <div key={project.title} className="bg-gray-800 rounded-3xl relative overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20">
-                        <div className="lg:grid lg:grid-cols-2 lg:gap-4">
+                {siteConfig.projectData.map((project,index)=>(
+                    <div 
+                    key={project.title} 
+                    style={{top:isMobile ? "0px" :`calc(37px + ${index*40}px)`}}
+                    className="bg-gray-800 rounded-3xl overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20 relative md:sticky ">
+                        <div className="lg:grid lg:grid-cols-2 lg:gap-4 sticky top-9">
                             <div className="lg:pb-16">
                                 <div>
                                     <div className=" bg-gradient-to-r from-primary to-sky-400 md:inline-flex  gap-2 items-center tracking-widest text-sm lg:text-md text-transparent bg-clip-text">
                                         <span className="md:font-bold uppercase ">{project.name}</span>
-                                        {/* <span>&bull;</span> */}
-                                        {/* <span className="text-xs">{project.role}</span> */}
                                     </div>
                                 </div>
                                 <h3 className="text-xl mt-2 md:mt-5 text-primary md:text-3xl">{project.title}</h3>
@@ -32,6 +47,13 @@ export const ProjectView=()=>{
                                         </li>
                                     ))}
                                 </ul>
+                                <div className="flex flex-wrap gap-2 mt-3">
+                                {project.tools.map((tool,index)=>{
+                                    return(
+                                        <span key={index} className="bg-primary/20 text-white px-3 py-1 rounded-full text-xs font-serif">{tool}</span>
+                                    )
+                                })}
+                                </div>
                                 <div className="flex gap-2">
                                     <a href={project.link}>
                                         <ElevatedButton className="group mt-8 h-10 ">
