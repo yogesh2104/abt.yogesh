@@ -1,19 +1,10 @@
 
+import { siteConfig } from "@/config/site";
+
 export const metadata = {
-    title: 'abtyogesh || skill',
+    title: 'abtyogesh || Experience',
     description: 'This is the portfolio of Yogesh Sing. I am a full stack developer. I am a quick learner and I am always looking for new challenges.',
 }
-
-import {Fragment} from "react"
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
-import { siteConfig } from "@/config/site";
-import { BriefcaseBusiness } from "lucide-react";
-import CardHeader from "@/components/card-header";
-import { Card, CardContent } from "@/components/ui/card";
-
-const skillsData:string[]=["AWS","Bootstrap","NodeJs","ExpressJs","CSS","Django","Docker","Git","HTML","JavaScript","MongoDB","NextJs","Python","React","Strapi","Tailwind","Typescript"]
-
 
 const SkillPage=()=>{
     return(
