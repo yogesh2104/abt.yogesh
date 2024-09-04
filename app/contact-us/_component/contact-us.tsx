@@ -46,8 +46,8 @@ const ContactUS=()=>{
 
     return(
         <>
-        <div className="p-8 font-sans ">
-            <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Contact<span className="text-primary">.</span></h1>
+        <div className="md:container font-sans ">
+            <h1 className="text-4xl pt-4 md:text-6xl font-bold mb-4 text-center dark:text-white text-black">Contact<span className="text-primary">.</span></h1>
         
             <div className="border-t border-gray-700 pt-8">
                 <Form {...form}>

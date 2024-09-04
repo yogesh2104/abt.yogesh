@@ -13,10 +13,10 @@ export default async function BlogPage(){
     const dispalyAllBlog = blogs
 
     return(
-        <div className="container md:max-w-5xl">
+        <div className="md:container md:max-w-5xl">
         <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-            <div className="max-w-6xl mx-auto mb-8">
-                <h1 className="text-6xl font-bold mb-3 text-center dark:text-white text-black">Blog<span className="text-primary">.</span></h1>
+            <div className="max-w-6xl mx-auto mb-4 pt-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-2 text-center dark:text-white text-black">Blog<span className="text-primary">.</span></h1>
                 <p className="text-sm text-muted-foreground">My ramblings on all things web dev.</p>
             </div>
         </div>

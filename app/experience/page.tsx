@@ -9,54 +9,8 @@ export const metadata = {
 const SkillPage=()=>{
     return(
         <>
-        {/* <div className="container min-h-max text-white">
-            <div className=" text-white p-6 font-sans">
-                <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Experience<span className="text-primary">.</span></h1>
-
-                {siteConfig.experiences.map((exp) => (
-                <div key={exp.id} className="border-t border-gray-700 pt-2 mb-4">
-                    <div className="mb-1">
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-                        <h2 className="text-xl sm:text-2xl font-semibold text-primary ">{exp.title}</h2>
-                        <p className="text-lg sm:text-xl dark:text-white text-black">{exp.duration}</p>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                        <h3 className="text-lg  font-semibold dark:text-white text-black font-serif">{exp.company}</h3>
-                        <p className="text-lg dark:text-white text-black">{exp.location}</p>
-                    </div>
-
-                    {exp.project.map((pro,proId)=>{
-                        return(
-                        <div key={proId}>
-                            <h3 className="text-md  font-semibold dark:text-white text-black font-serif">{pro.name}</h3>
-                            <ul>
-                                {pro.keyPoint.map((keypoint,inx)=>{
-                                    return(
-                                        <li key={inx}>{keypoint}</li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                        )
-                    })}
-
-                    <ul>
-                        {exp.keyPoint.map((keypoint,inx)=>{
-                            return(
-                                <li key={inx}>{keypoint}</li>
-                            )
-                        })}
-                    </ul>
-                    </div>
-                </div>
-                ))}
-
-            </div>
-        </div> */}
-
-            <div className="container min-h-max text-white">
-            <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Experience<span className="text-primary">.</span></h1>
+            <div className="md:container pt-4 font-sans min-h-max text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Experience<span className="text-primary">.</span></h1>
             
             {siteConfig.experiences.map((exp) => (
                 <div key={exp.id} className="mb-8">
@@ -90,14 +44,6 @@ const SkillPage=()=>{
                         ))}
                     </ul>
                     )}
-
-                    {/* <div className="mt-4 flex flex-wrap gap-2">
-                    {['NextJS', 'Material UI', 'GraphQL', 'Redux Toolkit', 'REST API', 'Zustand', 'Express.js', 'Node.js', 'MongoDB', 'AWS S3', 'Salesforce', 'Apex', 'Visualforce'].map((skill) => (
-                        <Badge key={skill} variant="secondary" className="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
-                        {skill}
-                        </Badge>
-                    ))}
-                    </div> */}
                 </div>
                 </div>
             ))}

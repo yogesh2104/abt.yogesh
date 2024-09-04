@@ -12,8 +12,8 @@ export const metadata = {
 export default function GuestbookPage() {
   return (
     <div className="">
-      <section className="text-white p-8 font-sans mb-16">
-        <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
+      <section className="text-white pt-5 font-sans mb-16">
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
         <div className="border-t border-gray-700 pt-8">
           <Suspense fallback={<div className="text-gray-400">Loading...</div>}>
             <GuestbookEntries />

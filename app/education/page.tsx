@@ -7,9 +7,9 @@ export const metadata = {
 
 const EduPage=()=>{
   return(
-    <div className="container min-h-max text-white">
+    <div className="md:container min-h-max text-white">
       <div className=" text-white p-6 font-sans">
-        <h1 className="text-6xl font-bold mb-8 text-center dark:text-white text-black">Education<span className="text-primary">.</span></h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Education<span className="text-primary">.</span></h1>
 
         {siteConfig.educations.map((edu) => (
           <div key={edu.id} className="border-t border-gray-700 pt-2 mb-4">
@@ -20,8 +20,8 @@ const EduPage=()=>{
               </div>
               
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-                <h3 className="text-lg  font-semibold dark:text-white text-black font-serif">{edu.school}</h3>
-                <p className="text-lg dark:text-white text-black">{edu.location}</p>
+                <h3 className="text-md font-medium dark:text-white text-black font-serif">{edu.school}</h3>
+                <p className="text-lg dark:text-white underline text-black">{edu.location}</p>
               </div>
               
               <div className="flex flex-wrap gap-2">
