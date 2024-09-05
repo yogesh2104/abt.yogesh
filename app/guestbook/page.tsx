@@ -31,7 +31,6 @@ async function GuestbookForm() {
   return session?.user ? (
     <div className='flex justify-start gap-5 items-center mt-2'>
       <InputForm />
-      <SignOut />
     </div>
   ) : (
     <div className="flex gap-5 justify-center mt-6">

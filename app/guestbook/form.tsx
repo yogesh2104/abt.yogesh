@@ -9,6 +9,7 @@ import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/f
 import { Input } from "@/components/ui/input"
 import { useFormStatus } from 'react-dom';
 import ElevatedButton from '@/components/elevated-button';
+import { SignOut } from './button';
 
 const FormSchema = z.object({
   userEntry: z.string().min(2, {
@@ -34,7 +35,7 @@ export function InputForm() {
  
   return (
     <Form {...form}>
-      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="flex max-w-[500px] align-center gap-5">
+      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="align-center gap-2">
       <FormField
         control={form.control}
         name="userEntry"
@@ -47,7 +48,9 @@ export function InputForm() {
           </FormItem>
         )}
       />
-      <ElevatedButton type="submit" className="w-36" disabled={pending}>Submit</ElevatedButton>
+
+      <ElevatedButton type="submit" className="mt-4 mr-3 w-40 text-white text-sm dark:text-black" disabled={pending}>Submit</ElevatedButton>
+      <SignOut />
       </form>
     </Form>
   )

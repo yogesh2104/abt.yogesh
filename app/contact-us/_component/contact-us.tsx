@@ -61,7 +61,7 @@ const ContactUS=()=>{
                             <Input
                             placeholder="Your Name"
                             {...field}
-                            className="border-gray-700 text-white placeholder-gray-400"
+                            className="border-gray-700 dark:text-white text-black placeholder-gray-400"
                             />
                         </FormControl>
                         <FormMessage />
@@ -78,7 +78,7 @@ const ContactUS=()=>{
                             type="email"
                             placeholder="Your Email"
                             {...field}
-                            className="border-gray-700 text-white placeholder-gray-400"
+                            className="border-gray-700 dark:text-white text-black placeholder-gray-400"
                             />
                         </FormControl>
                         <FormMessage />
@@ -94,7 +94,7 @@ const ContactUS=()=>{
                             <Textarea
                             placeholder="Your Message"
                             {...field}
-                            className="border-gray-700 text-white placeholder-gray-400 resize-none"
+                            className="border-gray-700 dark:text-white text-black placeholder-gray-400 resize-none"
                             rows={4}
                             />
                         </FormControl>

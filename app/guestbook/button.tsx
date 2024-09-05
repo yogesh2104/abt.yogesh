@@ -6,7 +6,7 @@ import ElevatedButton from "@/components/elevated-button";
 
 export function SignOut() {
     return (
-      <ElevatedButton className="text-white w-36  dark:text-black" onClick={() => signOut()}>
+      <ElevatedButton className="text-white w-36  dark:text-black -mt-10" onClick={() => signOut()}>
         Sign out
       </ElevatedButton>
     );

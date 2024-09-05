@@ -11,6 +11,7 @@ import { ThemeWrapper } from "@/components/theme-wrapper";
 import grainImage from "./../public/images/grain.jpg"
 import { ShootingStars } from "@/components/shooting-stars";
 import { StarsBackground } from "@/components/stars-background";
+import Script from "next/script";
 
 
 
