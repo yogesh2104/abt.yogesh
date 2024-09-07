@@ -93,7 +93,7 @@ export const siteConfig = {
         location:"Surat",
         project:[
           {
-            name:"Time Tracking Software(SaaS) Product",
+            name:"Time Tracking Software(SaaS) Product(Frontend)",
             keyPoint:[
               "Developed a time-tracking and employee-monitoring SaaS product for companies and remote teams using NextJS, Material UI, GraphQL, and Redux Toolkit.",
               "Key features included time tracking with screenshots, attendance and productivity, task management, and online reports and statistics."
@@ -212,7 +212,7 @@ export const siteConfig = {
                 </p>
               );
           },
-      },
+      }, 
       {
           name: "Coding InterView",
           title: "Coding-Interview-University Repo.",
@@ -232,6 +232,26 @@ export const siteConfig = {
                 </p>
               );
           },
+      },
+      {
+        name: "ThreeJs Diamond",
+        title: "ThreeJs Diamond Customizer.",
+        results: [
+          { title: "This is 3D Dimaond Renderer." },
+          { title: "Allow to change ring and diamond color" },
+        ],
+        link: "https://threejsdesign.vercel.app/",
+        image: '/project/threejs.png',
+        tools: ['Nextjs','Javascript', 'ThreeJS', 'Zustand', 'Tailwind CSS'],
+        role: 'Frontend Developer',
+        code: null,
+        content: () => {
+            return (
+              <p>
+                This is 3D Dimaond Renderer. And allow you to change ring and diamond color.
+              </p>
+            );
+        },
       }, 
     ],
     navigationBarItem :[
