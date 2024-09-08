@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { atomWithStorage } from "jotai/utils";
+import { atom } from "jotai";
 import { Theme, CssVars, themes } from "@/lib/themes";
 
 type Config = {
@@ -12,7 +12,7 @@ type Config = {
   };
 };
 
-const configAtom = atomWithStorage<Config>("config", {
+const configAtom = atom<Config>({
   theme: "green",
   cssVars: {
     light: themes.find((theme) => theme.name === "green")?.cssVars

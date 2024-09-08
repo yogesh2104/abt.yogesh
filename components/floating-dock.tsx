@@ -15,6 +15,8 @@ import {AlignJustify,  Moon, Sun}  from "lucide-react"
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
+import { useAtom } from "jotai";
+import { expressionAtom } from "@/hook/use-expression";
 
 export const FloatingDock = ({
   desktopClassName,
@@ -24,13 +26,14 @@ export const FloatingDock = ({
   mobileClassName?: string;
 }) => {
   const pathname = usePathname()
+  const [expression] = useAtom(expressionAtom);
   function hasSomethingAfterBlog(path:string) {
     const blogPath = '/blog';
 
     return path.startsWith(blogPath) && path.length > blogPath.length;
   }
 
-  return (
+  return (expression && 
     <div className="fixed bottom-5 left-0 right-0 flex items-center justify-center h-[3rem] w-full z-50">
       {hasSomethingAfterBlog(pathname) || <FloatingDockDesktop items={siteConfig.navigationBarItem} className={desktopClassName}/>}
       <FloatingDockMobile items={siteConfig.navigationBarItem} className={mobileClassName} isBlog={hasSomethingAfterBlog(pathname)}/>

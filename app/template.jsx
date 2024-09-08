@@ -5,121 +5,148 @@ import * as faceapi from 'face-api.js';
 import { getColorForExpression } from "@/lib/get-color-for-expression";
 import { themes } from "@/lib/themes";
 import { useConfig } from "@/hook/use-config";
-import { LoaderIcon } from "lucide-react";
 import { expressionAtom } from './../hook/use-expression';
 import { useAtom } from "jotai";
-
+import MultiStepLoader from './../components/multi-step-loader'
 
 export default function Template({ children }) {
-  // const videoRef = useRef(null);
-  // const [expression, setExpression] = useAtom(expressionAtom);
-  // const [config,setConfig] = useConfig();
-  // const [timeoutId, setTimeoutId] = useState(null);
+  const videoRef = useRef(null);
+  const [expression, setExpression] = useAtom(expressionAtom);
+  const [config, setConfig] = useConfig();
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //     if (expression === null) {
-  //         startVideo();
-  //         loadModels();
-  //     }
-  // }, [expression]);
+  useEffect(() => {
+    if (expression === null) {
+      let isMounted = true;
+      const detectionTimeout = setTimeout(() => {
+        if (isMounted) setDefaultExpression();
+      }, 6000);
 
-  // const startVideo = () => {
-  //   navigator.mediaDevices.getUserMedia({ video: true })
-  //     .then((currentStream) => {
-  //       if (videoRef.current) {
-  //         videoRef.current.srcObject = currentStream;
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+      startVideo()
+        .then(() => loadModels())
+        .then(() => {
+          if (isMounted) detectFaceExpression();
+        })
+        .catch((err) => {
+            // if someone not allow camera then setting sepression and color manually
 
-  // const stopVideoStream = () => {
-  //   const stream = videoRef.current?.srcObject;
-  //   if (stream) {
-  //     const tracks = stream.getTracks();
-  //     tracks.forEach(track => track.stop());
-  //   }
-  // };
+            setExpression(['angry', 1]);
+            const theme = themes.find((theme) => theme.name === "red");
+            setConfig({
+                theme: theme.name,
+                cssVars: theme.cssVars
+            });
+            stopVideoStream();
+            if (isMounted) setError("Failed to start camera or load models");
+        });
 
-  // const loadModels = () => {
-  //   Promise.all([
-  //     faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
-  //     faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
-  //     faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
-  //     faceapi.nets.faceExpressionNet.loadFromUri("/models")
-  //   ]).then(() => {
-  //     DetectMyFaceExpression();
-  //   });
-  // };
+      return () => {
+        isMounted = false;
+        clearTimeout(detectionTimeout);
+        stopVideoStream();
+      };
+    }
+  }, [expression]);
 
-  // const DetectMyFaceExpression = () => {
-  //   const interval = setInterval(async () => {
-  //     if (videoRef.current) {
-  //       const detections = await faceapi.detectAllFaces(
-  //         videoRef.current,
-  //         new faceapi.TinyFaceDetectorOptions()
-  //       ).withFaceLandmarks().withFaceExpressions();
-  //       if (detections.length > 0) {
-  //         clearTimeout(timeoutId)
-  //         const detectedExpression = getDominantExpression(detections[0].expressions);
-          
-  //         const getColor = getColorForExpression(detectedExpression[0])
+  const startVideo = () => {
+    return navigator.mediaDevices.getUserMedia({ video: true })
+      .then((currentStream) => {
+        if (videoRef.current) {
+          videoRef.current.srcObject = currentStream;
+        }
+      });
+  };
 
-  //         const theme = themes.find((theme) => theme.name === getColor);
+  const stopVideoStream = () => {
+    const stream = videoRef.current?.srcObject;
+    if (stream) {
+      const tracks = stream.getTracks();
+      tracks.forEach(track => track.stop());
+    }
+  };
 
-  //         setConfig({
-  //           theme: theme.name,
-  //           cssVars: theme.cssVars
-  //         })
+  const loadModels = () => {
+    return Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
+      faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
+      faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
+      faceapi.nets.faceExpressionNet.loadFromUri("/models")
+    ]);
+  };
 
-  //         setTimeout(() => {
-  //           stopVideoStream();
-  //           clearInterval(interval);
-  //           setExpression(detectedExpression);
-  //         }, 500);
-  //       }else{
-  //       const newTimeoutId = setTimeout(() => {
-  //         stopVideoStream();
-  //         clearInterval(interval);
-  //         // const theme = themes.find((theme) => theme.name === "yellow");
-  //         // setConfig({
-  //         //   theme: theme.name,
-  //         //   cssVars: theme.cssVars
-  //         // })
+  const detectFaceExpression = () => {
+    const detectFace = async () => {
+      if (videoRef.current) {
+        const detections = await faceapi.detectAllFaces(
+          videoRef.current,
+          new faceapi.TinyFaceDetectorOptions()
+        ).withFaceLandmarks().withFaceExpressions();
 
-  //         setExpression((prev) => {
-  //           if (prev == null) {
-  //             return ['happy', 1];
-  //           }
-  //           return prev;
-  //         });
+        if (detections.length > 0) {
+          const detectedExpression = getDominantExpression(detections[0].expressions);
+          setDetectedExpression(detectedExpression);
+          stopVideoStream();
+          return true;
+        }
+      }
+      return false;
+    };
 
+    const attemptDetection = () => {
+      detectFace().then((faceDetected) => {
+        if (!faceDetected) {
+          requestAnimationFrame(attemptDetection);
+        }
+      });
+    };
 
-  //       }, 5000);
-  //       setTimeoutId(newTimeoutId);
-  //       }
-  //     }
-  //   }, 1000);
+    attemptDetection();
+  };
 
-  // };
+  const getDominantExpression = (expressions) => {
+    return Object.entries(expressions).reduce((a, b) => a[1] > b[1] ? a : b);
+  };
 
-  // const getDominantExpression = (expressions)=> {
-  //   const sortedExpressions = Object.entries(expressions).sort((a, b) => b[1] - a[1]);
-  //   return sortedExpressions[0];
-  // };
+  const setDetectedExpression = (detectedExpression) => {
+    const [expressionName, expressionValue] = detectedExpression;
+    const color = getColorForExpression(expressionName);
+    const theme = themes.find((theme) => theme.name === color);
+    setConfig({
+      theme: theme.name,
+      cssVars: theme.cssVars
+    });
 
-  return(
-      <div>
-          {/* <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{display:"none"}} ></video>
-          {expression==null ?  
-          <div className="flex justify-center items-center h-[400px]">
-              <LoaderIcon className="h-6 w-6 text-primary animate-spin"/>
-          </div> :<>{children}</> 
-          }  */}
+    setExpression([expressionName, expressionValue]);
+    stopVideoStream();
+  };
 
-          {children}
-      </div>
-  )
+  const setDefaultExpression = () => {
+    setExpression(['happy', 1]);
+    stopVideoStream();
+  };
+
+  const loadingStates = [
+    { text: "Detecting your expression..." },
+    { text: "Analyzing your face..." },
+    { text: "Almost there..." },
+    { text: `You look like ${expression!=null && expression[0]}`},
+    { text: "Finalizing..." },
+  ];
+
+  if (error) {
+    return <div className="text-center text-red-500">{error}</div>;
+  }
+
+  return (
+    <div>
+      <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{display:"none"}} />
+      {expression === null ? (
+        <div className="flex justify-center items-center h-[400px]">
+          <MultiStepLoader loadingStates={loadingStates} loading={expression==null? true: false} duration={5000} />
+        </div>
+      ) : (
+        children
+      )}
+    </div>
+  );
 }
