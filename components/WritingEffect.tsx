@@ -109,7 +109,7 @@ export const WritingEffect = ({
   return (
     <div className={" min-h-max text-white"}>
       <div className="md:container mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center dark:text-white text-black">
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center dark:text-white text-black">
           About<span className="text-primary">.</span>
         </h1>
 

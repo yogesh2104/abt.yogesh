@@ -13,7 +13,7 @@ export default function GuestbookPage() {
   return (
     <div className="">
       <section className="text-white pt-5 font-sans mb-16">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center dark:text-white text-black">Guestbook<span className="text-primary">.</span></h1>
         <div className="border-t border-gray-700 pt-8">
           <Suspense fallback={<div className="text-gray-400">Loading...</div>}>
             <GuestbookEntries />

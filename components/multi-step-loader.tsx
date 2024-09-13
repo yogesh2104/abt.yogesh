@@ -108,12 +108,6 @@ const MultiStepLoader = ({
     return () => clearTimeout(timeout);
   }, [currentState, loading, loop, loadingStates.length, duration]);
 
-  const updatedLoadingStates = loadingStates.map((state, index) => {
-    if (index === 3 && expression) {
-      return { text: `You look ${expression[0]}` };
-    }
-    return state;
-  });
 
   return (
     <AnimatePresence mode="wait">
@@ -127,7 +121,7 @@ const MultiStepLoader = ({
           <div className="h-96 relative">
             <LoaderCore
               currentState={currentState}
-              loadingStates={updatedLoadingStates}
+              loadingStates={loadingStates}
             />
           </div>
           <div className="bg-gradient-to-t inset-x-0 z-20 bottom-0 bg-white dark:bg-black h-full absolute [mask-image:radial-gradient(900px_at_center,transparent_30%,white)]" />

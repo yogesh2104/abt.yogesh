@@ -56,13 +56,13 @@ export const ProjectView=()=>{
                                 </div>
                                 <div className="flex gap-2">
                                     {project.link &&
-                                    <a href={project.link}>
+                                    <a href={project.link} target="_blank">
                                         <ElevatedButton className="group mt-8 h-10 ">
                                             <span className="flex gap-2 items-center text-sm mt-1">Demo <MoveRight className="h-4 w-4 -rotate-45 group-hover:rotate-0"/> </span>
                                         </ElevatedButton>
                                     </a>}
                                     {project.code &&
-                                    <a href={project.code}>
+                                    <a href={project.code} target="_blank">
                                         <ElevatedButton className="group mt-8 h-10">
                                             <span className="flex gap-2 items-center text-sm mt-1">Code <MoveRight className="h-4 w-4 -rotate-45 group-hover:rotate-0"/> </span>
                                         </ElevatedButton>

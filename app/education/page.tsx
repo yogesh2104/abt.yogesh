@@ -9,7 +9,7 @@ const EduPage=()=>{
   return(
     <div className="md:container min-h-max text-white">
       <div className=" text-white p-6 font-sans">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center dark:text-white text-black">Education<span className="text-primary">.</span></h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center dark:text-white text-black">Education<span className="text-primary">.</span></h1>
 
         {siteConfig.educations.map((edu) => (
           <div key={edu.id} className="border-t border-gray-700 pt-2 mb-4">

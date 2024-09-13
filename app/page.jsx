@@ -14,9 +14,9 @@ export default function Home() {
     <section className="flex items-center justify-center min-h-[calc(85vh-1px)] ">
       <div className="flex flex-col items-center text-center">
         <h1 className="text-2xl font-bold leading-10 space-x-4 text-black dark:text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
-          Hey, <br />
+          Hey {" "}, <br />
           This is <span className="text-primary">{siteConfig.personalData.name}</span>
-          {`, I'm a Professional `}
+          {" "}{`, I'm a Professional `}
           <Typer data={siteConfig.personalData.typerData} />
         </h1>
         <p className="mt-4 text-center text-lg font-normal text-gray-600 dark:text-gray-300 font-serif max-w-md mx-auto">

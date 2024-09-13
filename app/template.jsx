@@ -19,24 +19,18 @@ export default function Template({ children }) {
     if (expression === null) {
       let isMounted = true;
       const detectionTimeout = setTimeout(() => {
-        if (isMounted) setDefaultExpression();
+        // in case camera not get expression then set default expression sad
+        if (isMounted) setDefaultExpression("happy","yellow");
       }, 6000);
 
       startVideo()
-        .then(() => loadModels())
-        .then(() => {
+        ?.then(() => loadModels())
+        ?.then(() => {
           if (isMounted) detectFaceExpression();
         })
         .catch((err) => {
             // if someone not allow camera then setting sepression and color manually
-
-            setExpression(['angry', 1]);
-            const theme = themes.find((theme) => theme.name === "red");
-            setConfig({
-                theme: theme.name,
-                cssVars: theme.cssVars
-            });
-            stopVideoStream();
+            setDefaultExpression("angry","red")
             if (isMounted) setError("Failed to start camera or load models");
         });
 
@@ -49,7 +43,7 @@ export default function Template({ children }) {
   }, [expression]);
 
   const startVideo = () => {
-    return navigator.mediaDevices.getUserMedia({ video: true })
+    return navigator?.mediaDevices?.getUserMedia({ video: true })
       .then((currentStream) => {
         if (videoRef.current) {
           videoRef.current.srcObject = currentStream;
@@ -120,8 +114,13 @@ export default function Template({ children }) {
     stopVideoStream();
   };
 
-  const setDefaultExpression = () => {
-    setExpression(['happy', 1]);
+  const setDefaultExpression = (expression,color) => {
+    setExpression([expression, 1]);
+    const theme = themes.find((theme) => theme.name === color);
+    setConfig({
+      theme: theme.name,
+      cssVars: theme.cssVars
+    });
     stopVideoStream();
   };
 
@@ -142,7 +141,7 @@ export default function Template({ children }) {
       <video crossOrigin="anonymous" ref={videoRef} autoPlay style={{display:"none"}} />
       {expression === null ? (
         <div className="flex justify-center items-center h-[400px]">
-          <MultiStepLoader loadingStates={loadingStates} loading={expression==null? true: false} duration={5000} />
+          <MultiStepLoader loadingStates={loadingStates} loading={expression==null? true: false} duration={2000} />
         </div>
       ) : (
         children
