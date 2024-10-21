@@ -38,7 +38,7 @@ const SkillPage=()=>{
                     ))}
 
                     {exp.keyPoint.length > 0 && (
-                    <ul className="list-disc pl-5 space-y-2 font-serif">
+                    <ul className="list-disc pl-5 space-y-2 font-serif mb-8">
                         {exp.keyPoint.map((keypoint, inx) => (
                         <li key={inx} className="text-gray-600 dark:text-gray-400">{keypoint}</li>
                         ))}

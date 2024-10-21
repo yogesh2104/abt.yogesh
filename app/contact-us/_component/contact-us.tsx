@@ -2,7 +2,6 @@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Send } from "lucide-react"
-import { toast } from "sonner"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -48,12 +47,12 @@ const ContactUS=()=>{
           })
     
           if (response.ok) {
-            toast.success("Message sent successfully!")
+            setStatus("success")
           } else {
-            toast.error("Failed to send message. Try again.")
+            setStatus("error")
           }
         } catch (error) {
-            toast.error("Failed to send message. Try again.")
+            setStatus("error")
         }
     }
 
@@ -125,6 +124,8 @@ const ContactUS=()=>{
                         <span className="flex items-center gap-3">{status === "sending" ? "Sending Message..." : "Send Message"}<Send className="h-4 w-4"/></span>
                         </ElevatedButton>
                     </div>
+                    {status === "success" && <p className="text-primary">Message sent successfully!</p>}
+                    {status === "error" && <p className="text-destructive">Failed to send message. Try again.</p>}
                 </form>
                 </Form>
             </div>

@@ -29,8 +29,8 @@ const ElevatedButton = forwardRef<HTMLButtonElement, ButtonProps>(
                 ref={ref}
                 {...props}
             >
-                <span className="group-hover:hidden absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black dark:bg-primary"></span>
-                <span className="hover:dark:text-white fold-bold relative inline-block font-serif h-full w-full rounded border-2 border-black hover:border-white dark:hover:border-none hover:text-white bg-white px-3 py-1 text-base font-normal text-black transition duration-100 hover:bg-primary hover:text-gray-900">
+                <span className=" absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black dark:bg-primary"></span>
+                <span className="fold-bold relative inline-block font-serif h-full w-full rounded border-2 border-black hover:border-black  bg-white px-3 py-1 text-base font-normal text-black transition duration-100">
                     {children}
                 </span>
             </button>

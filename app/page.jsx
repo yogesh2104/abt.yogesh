@@ -56,7 +56,7 @@ export default function Home() {
           </Link>
 
           <ElevatedButton>
-            <a href="/static/Singh_Yogesh.pdf" download>
+            <a href="/static/YogeshSingh.pdf" download>
               <span className="flex items-center gap-3">Get Resume<ArrowDownToLine className="ml-1 h-4 w-4" /></span>
             </a>
           </ElevatedButton>

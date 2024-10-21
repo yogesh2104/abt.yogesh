@@ -75,18 +75,6 @@ export const siteConfig = {
     experiences: [
       {
         id: 1,
-        title: 'Salesforce developer Intern',
-        company: "Cloud Analogy Private Ltd.",
-        duration: "(Feb 2022 - April 2022)",
-        location:"Noida",
-        project:[],
-        keyPoint:[
-          "Worked on various Salesforce modules, including Sales Cloud, and Custom Applications",
-          "Gained hands-on experience with Apex, Visualforce, and Lightning Components."
-        ] // if you do not have project then add key-Point or empty array and vice versa 
-      },
-      {
-        id: 2,
         title: "Frontend Developer",
         company: "Weingenious Technocrats Private Ltd.",
         duration: "(Nov 2022 - Present)",
@@ -115,7 +103,19 @@ export const siteConfig = {
           }
         ],
         keyPoint:[] 
-      }
+      },
+      {
+        id: 2,
+        title: 'Salesforce developer Intern',
+        company: "Cloud Analogy Private Ltd.",
+        duration: "(Feb 2022 - April 2022)",
+        location:"Noida",
+        project:[],
+        keyPoint:[
+          "Worked on various Salesforce modules, including Sales Cloud, and Custom Applications",
+          "Gained hands-on experience with Apex, Visualforce, and Lightning Components."
+        ] // if you do not have project then add key-Point or empty array and vice versa 
+      },
     ],
     projectData: [
       {
