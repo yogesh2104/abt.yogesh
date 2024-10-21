@@ -7,8 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import {Form,FormControl,FormField,FormItem,FormMessage} from "@/components/ui/form"
-import emailjs from '@emailjs/browser';
 import ElevatedButton from "@/components/elevated-button"
+import { useState } from "react"
 
 const formSchema = z.object({
     from_name: z.string().min(2, {message: "Username must be at least 2 characters."}),
@@ -18,7 +18,7 @@ const formSchema = z.object({
 })  
 
 const ContactUS=()=>{
-
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -30,18 +30,31 @@ const ContactUS=()=>{
     })
       
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY as string;
-        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPATE_KEY as string;
-        const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
+        const { email,from_name ,message } = values
+
+        setStatus("sending")
     
         try {
-            const res = await emailjs.send(serviceID, templateID, values, options);
-            if (res.status === 200) {
-            toast.success('Message sent successfully!');
-            };
-        } catch (error:any) {
-            toast.error(error?.text)
-        };
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name:from_name,
+                email, 
+                message
+            }),
+          })
+    
+          if (response.ok) {
+            toast.success("Message sent successfully!")
+          } else {
+            toast.error("Failed to send message. Try again.")
+          }
+        } catch (error) {
+            toast.error("Failed to send message. Try again.")
+        }
     }
 
     return(
@@ -107,8 +120,9 @@ const ContactUS=()=>{
                             className=""
                             role="button"
                             type="submit"
+                            disabled={status === "sending"}
                         >
-                        <span className="flex items-center gap-3">Send Message<Send className="h-4 w-4"/></span>
+                        <span className="flex items-center gap-3">{status === "sending" ? "Sending Message..." : "Send Message"}<Send className="h-4 w-4"/></span>
                         </ElevatedButton>
                     </div>
                 </form>
