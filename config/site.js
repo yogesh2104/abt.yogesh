@@ -15,7 +15,7 @@ export const siteConfig = {
         phone:"+91 8850281705",
         address:"Thane, Maharashtra India 400604",
         github:"https://github.com/yogesh2104/abt.yogesh",
-        linkedIn: 'www.linkedin.com/in/abt-yogesh',
+        linkedIn: 'https://www.linkedin.com/in/abt-yogesh',
         instagram:"https://instagram.com/im.yogesh_?igsh=ZWw2ZGp6em45aW54",
         twitter: '',
         stackOverflow: '',

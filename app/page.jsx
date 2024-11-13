@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { ArrowDownToLine, Contact, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import ElevatedButton from "@/components/elevated-button";
+import OpenToWork from "@/components/open-to-work";
 
 export const metadata = {
   title: 'abt-yogesh || Home',
@@ -23,7 +24,60 @@ export default function Home() {
           I build responsive and interactive web applications with a focus on performance and user experience.
         </p>
 
-        <div className="my-12 flex items-center gap-5">
+        <div className="w-full max-w-[400px] h-[80px]">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" className="w-full h-full">
+            <line x1="200" y1="20" x2="200" y2="40" stroke="#999" strokeWidth="2">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="-3 200 20;3 200 20;-3 200 20"
+                dur="2s"
+                repeatCount="indefinite"/>
+            </line>
+            
+            <circle cx="200" cy="20" r="4" fill="#000"/>
+            
+            <g transform-origin="200 20">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="-3;3;-3"
+                dur="2s"
+                repeatCount="indefinite"
+                additive="sum"/>
+              
+              <rect x="100" y="45" width="200" height="60" rx="5" 
+                fill="rgba(0,0,0,0.1)" 
+                transform="translate(5,5)"/>
+              
+              <rect x="100" y="40" width="200" height="60" rx="5" 
+                fill="#fff" 
+                stroke="#e5e7eb" 
+                strokeWidth="2"/>
+              
+              <path d="M195,40 L205,40 L200,30 Z" 
+                fill="#fff" 
+                stroke="#999" 
+                strokeWidth="1"/>
+              
+              <text x="200" y="75" 
+                fontFamily="Arial, sans-serif" 
+                fontSize="24" 
+                fontWeight="bold" 
+                fill="#2c73e4"
+                textAnchor="middle"
+                className="text-primary">
+                Open to Work
+              </text>
+            </g>
+          </svg>
+
+        </div>
+
+        {/* <OpenToWork/> */}
+
+        <div className="mb-10 flex items-center gap-5">
           <Link
             href={siteConfig.personalData?.github}
             target='_blank'
