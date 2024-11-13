@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import { ArrowDownToLine, Contact, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import ElevatedButton from "@/components/elevated-button";
-import OpenToWork from "@/components/open-to-work";
+
 
 export const metadata = {
   title: 'abt-yogesh || Home',
