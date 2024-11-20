@@ -270,11 +270,11 @@ export const siteConfig = {
         href: '/project',
         icon: (<Lightbulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
       },
-      {
-        title: 'Experience',
-        href: '/experience',
-        icon: (<BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-      },
+      // {
+      //   title: 'Experience',
+      //   href: '/experience',
+      //   icon: (<BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
+      // },
       {
         title: 'Guest Book',
         href: '/guestbook',

@@ -1,4 +1,4 @@
-import BuyMeACoffee from '@/components/buyme-coffee';
+// import BuyMeACoffee from '@/components/buyme-coffee';
 import { WritingEffect } from '@/components/WritingEffect';
 import { siteConfig } from '@/config/site';
 
@@ -15,7 +15,7 @@ const AboutPage=()=>{
                     <div className="p-4 break-normal mb-5">
                         <WritingEffect words={siteConfig.personalData.aboutMe}/>
                         <div id="bmc-wbtn"></div>
-                        <BuyMeACoffee/>
+                        {/* <BuyMeACoffee/> */}
                     </div>
                 </div>
             </div>
