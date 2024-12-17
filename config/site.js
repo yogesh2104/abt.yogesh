@@ -17,8 +17,8 @@ export const siteConfig = {
         github:"https://github.com/yogesh2104/abt.yogesh",
         linkedIn: 'https://www.linkedin.com/in/abt-yogesh',
         instagram:"https://instagram.com/im.yogesh_?igsh=ZWw2ZGp6em45aW54",
-        twitter: '',
-        stackOverflow: '',
+        twitter: 'https://x.com/im_yogesh88?t=QFBbYn3BO7gmrOI5g-d7YQ&s=08',
+        stackOverflow: 'https://stackoverflow.com/users/19811812/yogesh-singh?tab=profile',
         resume: "", //google drive link
         aboutMe:`
         I'm Yogesh Singh on the web. I'am a 25 y/o belonging to the Homo sapiens 🤣, a brother, a son, a friend, a self taugh web developer 
@@ -75,16 +75,34 @@ export const siteConfig = {
     experiences: [
       {
         id: 1,
+        title: "Full Stack Developer",
+        company: "Emarsun Technology",
+        duration: "(Nov 2024 - Present)",
+        location:"Thane",
+        project:[
+          {
+            name:"",
+            keyPoint:[
+              "Designed and implemented a scalable web application for gym management, featuring user registration, scheduling, and payment integration to streamline operations. Automated email notification system for user updates, reminders",
+              "Developed dynamic and responsive front-end interfaces using React.js and state management through Zustand. Integrated robust back-end services using ExpressJs and MongoDB, ensuring seamless data flow and high performance."
+            ]
+          },
+          
+        ],
+        keyPoint:[] 
+      },
+      {
+        id: 2,
         title: "Frontend Developer",
         company: "Weingenious Technocrats Private Ltd.",
-        duration: "(Nov 2022 - Present)",
+        duration: "(Nov 2022 - Oct 2024)",
         location:"Surat",
         project:[
           {
             name:"Time Tracking Software(SaaS) Product(Frontend)",
             keyPoint:[
-              "Developed a time-tracking and employee-monitoring SaaS product for companies and remote teams using NextJS, Material UI, GraphQL, and Redux Toolkit.",
-              "Key features included time tracking with screenshots, attendance and productivity, task management, and online reports and statistics."
+              "Developed a Microfrontend-based Time Tracking product for companies, using Next.js, Redux Toolkit, and GraphQL for data fetch. Improved the performance of the admin panel performance by 30%, improving speed and UX.",
+              "Orchestrated time tracking with screenshots, attendance and productivity, task management, reports and statistics. Coordinated with UI/UX designers and backend engineers resulting in a 40% acceleration in feature deployment"
             ]
           },
           {
@@ -94,18 +112,18 @@ export const siteConfig = {
               "Created both the customer-facing website and the admin panel to manage products, orders, and vendors efficiently. Integrate various vendor APIs to enhance the website functionality."
             ]
           },
-          {
-            name:"Diamond Image Renderer Full-Stack Project",
-            keyPoint:[
-              "Developed a Diamond Image Renderer that displays diamond images using third-party data, customized based on vendor requirements, within an iframe on their portal using Express.js, Node.js, MongoDB, AWS S3.",
-              "Implemented a feature allowing vendors to upload an Excel file containing the S3 folder name and additional data, which is then rendered in the iframe alongside the diamond images"
-            ]
-          }
+          // {
+          //   name:"Diamond Image Renderer Full-Stack Project",
+          //   keyPoint:[
+          //     "Developed a Diamond Image Renderer that displays diamond images using third-party data, customized based on vendor requirements, within an iframe on their portal using Express.js, Node.js, MongoDB, AWS S3.",
+          //     "Implemented a feature allowing vendors to upload an Excel file containing the S3 folder name and additional data, which is then rendered in the iframe alongside the diamond images"
+          //   ]
+          // }
         ],
         keyPoint:[] 
       },
       {
-        id: 2,
+        id: 3,
         title: 'Salesforce developer Intern',
         company: "Cloud Analogy Private Ltd.",
         duration: "(Feb 2022 - April 2022)",
@@ -118,6 +136,37 @@ export const siteConfig = {
       },
     ],
     projectData: [
+      {
+        name: "Debate-AI",
+        title: "Debate-AI",
+        results: [
+          { title: "Developed an AI-powered debate platform." },
+          { title: "Debate summaries with performance scores, resource recommendations," },
+        ],
+        link: "https://debate-arena.vercel.app/",
+        code:"",
+        image: '/project/debate.png',
+        tools: ['NextJs 15', 'MongoDB(Prisma ORM)', 'AuthJs'],
+        role: 'Full Stack Developer',
+        content: () => {
+          return (
+            <>
+              <div>
+                <p>Tech Stack : Nextjs 15</p>
+                <p>Database : MongoDB(Prisma ORM)</p>
+                <p>Authentication : AuthJs</p>
+                <p>CSS: Tailwind CSS/Shadcn ui</p>
+              </div>
+              <p>
+              Developed an AI-powered debate platform using Gemini API, enabling users to engage in debates on various topics with difficulty levels (easy, medium, expert), featuring transcripts, summaries, scores, and feedback.
+              </p>
+              <p>
+              Implemented features to generate debate summaries with performance scores, personalized feedback, and resource recommendations, enhancing user engagement and providing actionable insights for improvement.
+              </p>
+            </>
+          );
+        },
+      },
       {
         name: "Noter",
         title: "Notion clone.",
@@ -140,8 +189,7 @@ export const siteConfig = {
                 <p>CSS: Tailwind CSS</p>
               </div>
               <p>
-                Noter serves as the collaborative workspace where enhanced and more efficient work takes place.
-                To build this project I have to use NextJs with edge runtime environment and for authentication use Clerk(for user-management) and database I have Convex(this is backend-as-a-service.) and hosted on vercel.
+              Real-time note-taking application inspired by Notion, enabling seamless real-time editing and note-sharing using ConvexDB for efficient data synchronization. Leveraged NextJs for server-side rendering optimizing performance, load times. Designed a responsive and intuitive user interface to enhance user experience and collaboration.
               </p>
             </>
           );
@@ -164,7 +212,7 @@ export const siteConfig = {
           return (
             <>
             <p>
-              Eldora UI is a collection of re-usable components that you can copy and paste into your web apps. It primarily features components, blocks, and templates geared towards creating landing pages and user-facing marketing materials.
+            Contributed to the Eldora UI project, developing a library of reusable UI components using Next.js, TypeScript,TailwindCSS, and Framer Motion. Enhanced components for accessibility, responsiveness, and performance, ensuring seamless integration and exceptional user experiences across platforms.
             </p>
             </>
           );
@@ -270,11 +318,11 @@ export const siteConfig = {
         href: '/project',
         icon: (<Lightbulb className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
       },
-      // {
-      //   title: 'Experience',
-      //   href: '/experience',
-      //   icon: (<BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
-      // },
+      {
+        title: 'Experience',
+        href: '/experience',
+        icon: (<BriefcaseBusiness className="h-full w-full text-neutral-500 dark:text-neutral-300" />)
+      },
       {
         title: 'Guest Book',
         href: '/guestbook',

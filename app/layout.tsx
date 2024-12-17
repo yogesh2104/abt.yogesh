@@ -11,7 +11,6 @@ import { ThemeWrapper } from "@/components/theme-wrapper";
 import grainImage from "./../public/images/grain.jpg"
 import { ShootingStars } from "@/components/shooting-stars";
 import { StarsBackground } from "@/components/stars-background";
-import Script from "next/script";
 
 
 
@@ -30,12 +29,12 @@ export async function Metadata({ params, searchParams }: Props,parent: Resolving
       default: 'Yogesh Singh',
     },
     description: "yogesh//singh, student and web developer from India",
-    metadataBase: new URL('http://localhost:3000/'),
+    metadataBase: new URL('https://abt-yogesh.vercel.app/'),
     generator: 'Next.js',
     applicationName: 'Next.js',
     referrer: 'origin-when-cross-origin',
     keywords: ['web dev', 'React', 'JavaScript','nextjs','web developer','india','indian developer'],
-    authors: [{ name: 'Yogesh' }, { name: 'Yogesh', url: 'http://localhost:3000/' }],
+    authors: [{ name: 'Yogesh' }, { name: 'Yogesh', url: 'https://abt-yogesh.vercel.app/' }],
     alternates: {
       canonical: '/',
       languages: {
@@ -46,7 +45,7 @@ export async function Metadata({ params, searchParams }: Props,parent: Resolving
     openGraph: {
       title: 'Yogesh Singh',
       description: 'The React Framework for the Web',
-      url: 'http://localhost:3000/',
+      url: 'https://abt-yogesh.vercel.app/',
       siteName: 'abt.yogesh.me',
       locale: 'en_IN',
       type: 'website',
