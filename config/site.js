@@ -23,7 +23,7 @@ export const siteConfig = {
         aboutMe:`
         I'm Yogesh Singh on the web. I'am a 25 y/o belonging to the Homo sapiens 🤣, a brother, a son, a friend, a self taugh web developer 
         
-        and programmer.I have completed MCA(Master of Computer Application). I had already started programming back when I was in Second year 
+        and programmer. I have completed MCA(Master of Computer Application). I had already started programming back when I was in Second year 
        
         of BSc because first year pass in sports😁. I started web development mostly in frontend development at that time, I used only HTML 
         

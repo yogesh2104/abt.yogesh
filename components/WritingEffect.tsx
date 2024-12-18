@@ -110,24 +110,20 @@ export const WritingEffect = ({
     <div className={" min-h-max text-white"}>
       <div className="md:container mx-auto">
         <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center dark:text-white text-black">
-          About<span className="text-primary">.</span>
+          About Me<span className="text-primary">.</span>
         </h1>
-
-        {/* text-justify dark:text-white text-lg w-full prose-zinc dark:prose-invert leading-8 prose-h1:mb-0 prose-h2:mt-0 prose-h3:mt-0 dark:prose-h1:text-zinc-200 prose-h1:text-zinc-900 prose-h4:font-normal prose-p:text-base dark:prose-h2:text-zinc-300 prose-h2:text-zinc-800 dark:prose-h3:text-zinc-400 prose-h3:text-zinc-800 prose-h4:mt-0 dark:prose-h4:text-zinc-400 prose-h4:text-zinc-700 prose-h4:mb-4 prose-p:text-zinc-700 dark:prose-p:text-zinc-200 prose-a:decoration-wavy prose-a:underline-offset-2 prose-code:px-1 prose-code:rounded-sm prose-code:bg-zinc-400/60 dark:prose-code:bg-zinc-400/20 prose-code:font-normal */}
-        <div className={"grid grid-cols-1 lg:grid-cols-3 gap-8"}>
-          <div className="col-span-2">
-              <div className="mb-8">
-                  <div className="font-serif font-normal leading-8 text-justify">
-                    {renderWords()}
-                  </div>
-              </div>
+        <div className={"grid grid-cols-1"}>
+          <div className="mb-8">
+            <div className="font-serif font-normal leading-8 text-justify">
+              {renderWords()}
+            </div>
           </div>
-          {isFinished && 
-          <div className="space-y-4">
-              <Badge title="Use at work" items={siteConfig.personalData.workItems} />
-              <Badge title="Use for fun" items={siteConfig.personalData.funItems} />
-          </div>}
         </div>
+        {isFinished && 
+        <div className="space-y-4">
+          <Badge title="Use at work" items={siteConfig.personalData.workItems} />
+          <Badge title="Use for fun" items={siteConfig.personalData.funItems} />
+        </div>}
       </div>
     </div>
   )

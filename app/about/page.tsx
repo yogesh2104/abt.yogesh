@@ -11,13 +11,7 @@ const AboutPage=()=>{
     return(
         <>
             <div className="w-full">
-                <div className="relative z-50">
-                    <div className="p-4 break-normal mb-5">
-                        <WritingEffect words={siteConfig.personalData.aboutMe}/>
-                        <div id="bmc-wbtn"></div>
-                        {/* <BuyMeACoffee/> */}
-                    </div>
-                </div>
+                <WritingEffect words={siteConfig.personalData.aboutMe}/>
             </div>
         </>
     )
